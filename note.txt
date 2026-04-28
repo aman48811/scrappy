@@ -1,0 +1,127 @@
+tag 137 -Reading Comprehension
+tag 139 -Critical Reasoning
+tag 140 -Problem Solving
+tag 457 -Graph and table
+tag 456 -MSR (Multi Source Reasoning)
+tag 455 -TPA (Two Parts Analysis)
+tag 141 -Data Sufficiency
+
+
+search url sample for problem Solving :
+
+https://gmatclub.com/forum/search.php?selected_search_tags%5B%5D=2067&t=0&search_tags=exact&submit=Search
+
+<span>
+							<input id="checkbox2067" type="checkbox" name="selected_search_tags[]" value="2067">
+							<label title="" for="checkbox2067">
+								Source: OG 2025-2026							</label>	
+						</span>
+I selected OG 2025 - 2026 here.
+
+After going to this page 
+we land up on another page where every question is under this tag
+
+<div class="topicsName">
+  <a
+    class="newestPostIcon"
+    href="https://gmatclub.com/forum/viewtopic.php?f=140&amp;t=90855&amp;view=unread#unread"
+  >
+    <img
+      loading="lazy"
+      src="/forum/styles/gmatclub_light/imageset/icon_topic_newest.png"
+      width="18"
+      height="10"
+      alt="View first unread post"
+      title="View first unread post"
+    />
+  </a>
+
+  <a
+    href="https://gmatclub.com/forum/if-n-is-a-positive-integer-and-the-product-of-all-integers-from-1-to-n-90855.html"
+    title="If n is a positive integer and the product of all integers from 1 to n, inclusive, is a multiple of 990, what is the least possible value of n? A. 10 B. 11 C. 12 D. 13 E. 14 A. 8 B. 9 C. 10 D. 11 E. 12 "
+    class="topic-link"
+  >
+    <span class="topicTitle">
+      If n is a positive integer and the product of all integers from 1 to n
+    </span>
+  </a>
+
+  <div class="tags-and-goto" style="display: flex; flex-flow: column nowrap">
+    <div class="topic-tags">
+      Tags:
+      <a href="/forum/search.php?search_id=tag&amp;tag_id=217">
+        Difficulty: 505-555 (Easy)
+      </a>,
+      &nbsp;
+      <a href="/forum/search.php?search_id=tag&amp;tag_id=185">
+        Multiples and Factors
+      </a>,
+      &nbsp;
+      <a href="/forum/search.php?search_id=tag&amp;tag_id=59">
+        Number Properties
+      </a>,
+      &nbsp;
+      <a href="/forum/search.php?search_id=tag&amp;tag_id=186">
+        Source: GMAT Prep (Classic)
+      </a>,
+      &nbsp;
+      <a href="/forum/search.php?search_id=tag&amp;tag_id=1256">
+        Source: OG 2016
+      </a>,
+      &nbsp;
+      <a href="/forum/search.php?search_id=tag&amp;tag_id=1255">
+        Source: OG 2017
+      </a>,
+      &nbsp;
+      <a href="/forum/search.php?search_id=tag&amp;tag_id=1254">
+        Source: OG 2018
+      </a>,
+      &nbsp;
+      <a href="/forum/search.php?search_id=tag&amp;tag_id=1253">
+        Source: OG 2019
+      </a>,
+      &nbsp;
+      <a href="/forum/search.php?search_id=tag&amp;tag_id=1342">
+        Source: OG 2020
+      </a>,
+      &nbsp;
+      <a href="/forum/search.php?search_id=tag&amp;tag_id=2067">
+        Source: OG 2025-2026
+      </a>,
+      &nbsp;
+      <a href="/forum/search.php?search_id=tag&amp;tag_id=190">
+        Source: Official Guide
+      </a>
+    </div>
+
+    <div class="topic-pagination">
+      Go to page:
+      <a href="https://gmatclub.com/forum/if-n-is-a-positive-integer-and-the-product-of-all-integers-from-1-to-n-90855.html">
+        1
+      </a>
+      <span class="page-sep">, </span>
+      <a href="https://gmatclub.com/forum/if-n-is-a-positive-integer-and-the-product-of-all-integers-from-1-to-n-90855-20.html">
+        2
+      </a>
+      <span class="page-sep">, </span>
+      <a href="https://gmatclub.com/forum/if-n-is-a-positive-integer-and-the-product-of-all-integers-from-1-to-n-90855-40.html">
+        3
+      </a>
+    </div>
+  </div>
+
+  <p>
+    in
+    <a href="https://gmatclub.com/forum/problem-solving-ps-140/">
+      Problem Solving (PS)
+    </a>
+  </p>
+</div>
+
+
+if we follow this link in here
+href="https://gmatclub.com/forum/if-n-is-a-positive-integer-and-the-product-of-all-integers-from-1-to-n-90855.html"
+
+after this we reach to the question page where we can extract the question and answer from it
+
+from here on the logic is same as scrapper-script.py
