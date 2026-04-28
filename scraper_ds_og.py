@@ -56,40 +56,41 @@ except ImportError:
 
 # ── Config ────────────────────────────────────────────────────────────────────
 
-TAGS_EXCEL      = "gmatclub_tags.xlsx"
-OUTPUT_EXCEL    = "PS_OG_questions.xlsx"
-SESSION_FILE    = "gmatclub_session.json"   # saved cookies -- reused across runs
-LOGIN_URL       = "https://gmatclub.com/forum/ucp.php?mode=login"
-FORUM_HOME      = "https://gmatclub.com/forum/"
+TAGS_EXCEL = "gmatclub_tags.xlsx"
+OUTPUT_EXCEL = "DS_OG_questions.xlsx"
+SESSION_FILE = "gmatclub_session.json"  # saved cookies -- reused across runs
+LOGIN_URL = "https://gmatclub.com/forum/ucp.php?mode=login"
+FORUM_HOME = "https://gmatclub.com/forum/"
 BASE_SEARCH_URL = "https://gmatclub.com/forum/search.php"
-PAGE_SIZE       = 50
-NO_RESULTS_MSG  = "No suitable matches were found."
-CF_WAIT_MS      = 4000
-CF_RETRIES      = 20
-PAGE_TIMEOUT    = 60000
-CRAWL_DELAY     = 2       # seconds between page requests
+PAGE_SIZE = 50
+NO_RESULTS_MSG = "No suitable matches were found."
+CF_WAIT_MS = 4000
+CF_RETRIES = 20
+PAGE_TIMEOUT = 60000
+CRAWL_DELAY = 2  # seconds between page requests
 
 
 # ── Load Target Tags ──────────────────────────────────────────────────────────
 
-def load_ps_og_tags(tags_excel: str) -> list:
-    df   = pd.read_excel(tags_excel, sheet_name="All Tags")
-    mask = (
-        (df["Category"] == "Problem Solving (PS)") &
-        (df["Tag Label"].str.startswith("Source: OG"))
+
+def load_ds_og_tags(tags_excel: str) -> list:
+    df = pd.read_excel(tags_excel, sheet_name="All Tags")
+    mask = (df["Category"] == "Data Sufficiency (DS)") & (
+        df["Tag Label"].str.startswith("Source: OG")
     )
     rows = df[mask][["Tag ID", "Tag Label"]].reset_index(drop=True)
     tags = [
         {"tag_id": int(r["Tag ID"]), "tag_label": str(r["Tag Label"])}
         for _, r in rows.iterrows()
     ]
-    print(f"\n🏷   Found {len(tags)} PS Source:OG tags to scrape:")
+    print(f"\n🏷   Found {len(tags)} DS Source:OG tags to scrape:")
     for t in tags:
         print(f"       {t['tag_id']:>6}  {t['tag_label']}")
     return tags
 
 
 # ── URL Builder ───────────────────────────────────────────────────────────────
+
 
 def build_url(tag_id: int, start: int = 0) -> str:
     params = [
@@ -104,6 +105,7 @@ def build_url(tag_id: int, start: int = 0) -> str:
 
 # ── HTML Parser ───────────────────────────────────────────────────────────────
 
+
 def parse_page(html: str):
     """
     Returns (questions_list, is_done).
@@ -112,7 +114,7 @@ def parse_page(html: str):
     if NO_RESULTS_MSG in html:
         return [], True
 
-    soup  = BeautifulSoup(html, "html.parser")
+    soup = BeautifulSoup(html, "html.parser")
     cards = soup.select("div.topicsName")
     if not cards:
         return [], False
@@ -123,46 +125,51 @@ def parse_page(html: str):
         if not link_tag:
             continue
 
-        href  = link_tag.get("href", "").strip()
+        href = link_tag.get("href", "").strip()
         title = link_tag.get("title", "").strip()
         if not title:
-            span  = link_tag.select_one("span.topicTitle")
+            span = link_tag.select_one("span.topicTitle")
             title = span.get_text(strip=True) if span else ""
         if href.startswith("/"):
             href = "https://gmatclub.com" + href
 
-        cat_tag  = card.select_one("p > a")
+        cat_tag = card.select_one("p > a")
         category = cat_tag.get_text(strip=True) if cat_tag else ""
 
-        tags_div   = card.select_one("div.topic-tags")
+        tags_div = card.select_one("div.topic-tags")
         tag_labels = []
-        tag_ids    = []
+        tag_ids = []
         if tags_div:
             for a in tags_div.select("a[href*='tag_id=']"):
                 lbl = a.get_text(strip=True)
-                m   = re.search(r"tag_id=(\d+)", a.get("href", ""))
+                m = re.search(r"tag_id=(\d+)", a.get("href", ""))
                 if m:
                     tag_labels.append(lbl)
                     tag_ids.append(m.group(1))
 
-        questions.append({
-            "Title":    title,
-            "Link":     href,
-            "Category": category,
-            "Tags":     " | ".join(tag_labels),
-            "Tag IDs":  " | ".join(tag_ids),
-        })
+        questions.append(
+            {
+                "Title": title,
+                "Link": href,
+                "Category": category,
+                "Tags": " | ".join(tag_labels),
+                "Tag IDs": " | ".join(tag_ids),
+            }
+        )
 
     return questions, False
 
 
 # ── Cloudflare Wait ───────────────────────────────────────────────────────────
 
+
 async def wait_for_cloudflare(page) -> bool:
     for attempt in range(CF_RETRIES):
         content = await page.content()
-        if ("Just a moment" not in content and
-                "security verification" not in content.lower()):
+        if (
+            "Just a moment" not in content
+            and "security verification" not in content.lower()
+        ):
             return True
         print(f"    ⏳ Cloudflare... ({attempt + 1}/{CF_RETRIES})")
         await page.wait_for_timeout(CF_WAIT_MS)
@@ -170,6 +177,7 @@ async def wait_for_cloudflare(page) -> bool:
 
 
 # ── Login Handler ─────────────────────────────────────────────────────────────
+
 
 def is_logged_in(html: str, current_url: str = "") -> bool:
     """Detect if the current page shows a logged-in user."""
@@ -179,7 +187,7 @@ def is_logged_in(html: str, current_url: str = "") -> bool:
         return False
     indicators = [
         "ucp.php?mode=logout",
-        "class=\"icon-svg-logout\"",
+        'class="icon-svg-logout"',
         "My Profile",
     ]
     html_lower = html.lower()
@@ -221,7 +229,7 @@ async def login(page, session_file: str, fresh_login: bool = False) -> bool:
     await wait_for_cloudflare(page)
 
     # Wait up to 3 minutes for user to log in
-    for i in range(36):    # 36 x 5s = 180s = 3 minutes
+    for i in range(36):  # 36 x 5s = 180s = 3 minutes
         await page.wait_for_timeout(5000)
         html = await page.content()
         if is_logged_in(html, page.url):
@@ -240,12 +248,13 @@ async def login(page, session_file: str, fresh_login: bool = False) -> bool:
 
 # ── Per-Tag Paginator ─────────────────────────────────────────────────────────
 
+
 async def scrape_one_tag(page, tag: dict, seen_links: set, save_html: str = "") -> list:
-    tag_id    = tag["tag_id"]
+    tag_id = tag["tag_id"]
     tag_label = tag["tag_label"]
     collected = []
-    start     = 0
-    page_num  = 1
+    start = 0
+    page_num = 1
 
     print(f"\n  ── {tag_label}  (id={tag_id}) ──────────────────────────")
 
@@ -291,13 +300,15 @@ async def scrape_one_tag(page, tag: dict, seen_links: set, save_html: str = "") 
         collected.extend(new_rows)
 
         dupes = len(rows) - len(new_rows)
-        print(f"    ✓  {len(new_rows):>3} new  |  {dupes:>3} dupes  |  tag total: {len(collected)}")
+        print(
+            f"    ✓  {len(new_rows):>3} new  |  {dupes:>3} dupes  |  tag total: {len(collected)}"
+        )
 
         if len(rows) < PAGE_SIZE:
             print(f"    ✅  Last page.")
             break
 
-        start    += PAGE_SIZE
+        start += PAGE_SIZE
         page_num += 1
         await asyncio.sleep(CRAWL_DELAY)
 
@@ -306,9 +317,12 @@ async def scrape_one_tag(page, tag: dict, seen_links: set, save_html: str = "") 
 
 # ── Master Orchestrator ───────────────────────────────────────────────────────
 
-async def run_scraper(tags: list, output: str, session_file: str, fresh_login: bool, save_html: str = ""):
-    all_rows    = []
-    seen_links  = set()
+
+async def run_scraper(
+    tags: list, output: str, session_file: str, fresh_login: bool, save_html: str = ""
+):
+    all_rows = []
+    seen_links = set()
     tag_buckets = {}
 
     async with async_playwright() as p:
@@ -321,7 +335,7 @@ async def run_scraper(tags: list, output: str, session_file: str, fresh_login: b
             ],
         )
         context = await browser.new_context()
-        page    = await context.new_page()
+        page = await context.new_page()
 
         # Stealth
         await page.add_init_script(
@@ -351,6 +365,7 @@ async def run_scraper(tags: list, output: str, session_file: str, fresh_login: b
 
 # ── Offline Test Mode ─────────────────────────────────────────────────────────
 
+
 def run_offline(tags: list, html_file: str, output: str):
     print(f"\n📄  Offline mode -- parsing: {html_file}")
     html = Path(html_file).read_text(encoding="utf-8", errors="replace")
@@ -358,7 +373,7 @@ def run_offline(tags: list, html_file: str, output: str):
     print(f"    Parsed {len(rows)} questions")
 
     tag_id_to_label = {str(t["tag_id"]): t["tag_label"] for t in tags}
-    tag_buckets     = {t["tag_label"]: [] for t in tags}
+    tag_buckets = {t["tag_label"]: [] for t in tags}
 
     for row in rows:
         for tid in row["Tag IDs"].split(" | "):
@@ -373,10 +388,12 @@ def run_offline(tags: list, html_file: str, output: str):
 # openpyxl rejects control characters outside the allowed XML 1.0 range
 _ILLEGAL_CHARS = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f]")
 
+
 def _clean(value):
     if isinstance(value, str):
         return _ILLEGAL_CHARS.sub("", value)
     return value
+
 
 def _clean_df(df: pd.DataFrame) -> pd.DataFrame:
     return df.applymap(_clean)
@@ -384,14 +401,16 @@ def _clean_df(df: pd.DataFrame) -> pd.DataFrame:
 
 HEADER_FILL = PatternFill("solid", fgColor="1F4E79")
 HEADER_FONT = Font(bold=True, color="FFFFFF", size=11)
-ALT_FILL    = PatternFill("solid", fgColor="EBF3FB")
+ALT_FILL = PatternFill("solid", fgColor="EBF3FB")
 
 
 def _style_sheet(ws, df: pd.DataFrame):
     for cell in ws[1]:
-        cell.fill      = HEADER_FILL
-        cell.font      = HEADER_FONT
-        cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        cell.fill = HEADER_FILL
+        cell.font = HEADER_FONT
+        cell.alignment = Alignment(
+            horizontal="center", vertical="center", wrap_text=True
+        )
 
     link_col = None
     for idx, col_cell in enumerate(ws[1], start=1):
@@ -410,12 +429,16 @@ def _style_sheet(ws, df: pd.DataFrame):
                 cell.font = Font(color="0563C1", underline="single")
 
     col_widths = {
-        "No": 6, "Title": 55, "Link": 30,
-        "Category": 22, "Tags": 70, "Tag IDs": 30
+        "No": 6,
+        "Title": 55,
+        "Link": 30,
+        "Category": 22,
+        "Tags": 70,
+        "Tag IDs": 30,
     }
     for col_cells in ws.columns:
         header = col_cells[0].value
-        width  = col_widths.get(header, 18)
+        width = col_widths.get(header, 18)
         ws.column_dimensions[col_cells[0].column_letter].width = width
 
     ws.row_dimensions[1].height = 28
@@ -435,7 +458,9 @@ def save_excel(all_rows: list, tag_buckets: dict, path: str):
         for lbl, rows in tag_buckets.items()
         if rows
     ]
-    summary_rows.append({"Tag Label": "TOTAL (deduplicated)", "Question Count": len(all_rows)})
+    summary_rows.append(
+        {"Tag Label": "TOTAL (deduplicated)", "Question Count": len(all_rows)}
+    )
     summary_df = pd.DataFrame(summary_rows)
 
     with pd.ExcelWriter(path, engine="openpyxl") as writer:
@@ -466,22 +491,42 @@ def save_excel(all_rows: list, tag_buckets: dict, path: str):
 
 # ── CLI ───────────────────────────────────────────────────────────────────────
 
+
 def main():
     parser = argparse.ArgumentParser(
         description="Scrape GMAT Club PS x Source:OG questions (with login)"
     )
-    parser.add_argument("--tags-excel", default=TAGS_EXCEL,
-                        help=f"Path to gmatclub_tags.xlsx (default: {TAGS_EXCEL})")
-    parser.add_argument("--output", default=OUTPUT_EXCEL,
-                        help=f"Output Excel filename (default: {OUTPUT_EXCEL})")
-    parser.add_argument("--session", default=SESSION_FILE,
-                        help=f"Session cookie file (default: {SESSION_FILE})")
-    parser.add_argument("--fresh-login", action="store_true",
-                        help="Force re-login even if a saved session exists")
-    parser.add_argument("--test-html", metavar="FILE",
-                        help="Offline test: parse a saved HTML instead of launching browser")
-    parser.add_argument("--save-html", metavar="FILE", default="",
-                        help="Save the first scraped page's HTML to FILE for debugging")
+    parser.add_argument(
+        "--tags-excel",
+        default=TAGS_EXCEL,
+        help=f"Path to gmatclub_tags.xlsx (default: {TAGS_EXCEL})",
+    )
+    parser.add_argument(
+        "--output",
+        default=OUTPUT_EXCEL,
+        help=f"Output Excel filename (default: {OUTPUT_EXCEL})",
+    )
+    parser.add_argument(
+        "--session",
+        default=SESSION_FILE,
+        help=f"Session cookie file (default: {SESSION_FILE})",
+    )
+    parser.add_argument(
+        "--fresh-login",
+        action="store_true",
+        help="Force re-login even if a saved session exists",
+    )
+    parser.add_argument(
+        "--test-html",
+        metavar="FILE",
+        help="Offline test: parse a saved HTML instead of launching browser",
+    )
+    parser.add_argument(
+        "--save-html",
+        metavar="FILE",
+        default="",
+        help="Save the first scraped page's HTML to FILE for debugging",
+    )
     args = parser.parse_args()
 
     # Resolve tags excel path
@@ -493,7 +538,7 @@ def main():
         else:
             sys.exit(f"Cannot find {tags_excel}. Run extract_tags.py first.")
 
-    tags = load_ps_og_tags(tags_excel)
+    tags = load_ds_og_tags(tags_excel)
 
     if args.test_html:
         run_offline(tags, args.test_html, args.output)
@@ -501,11 +546,14 @@ def main():
 
     try:
         import nest_asyncio
+
         nest_asyncio.apply()
     except ImportError:
         pass
 
-    asyncio.run(run_scraper(tags, args.output, args.session, args.fresh_login, args.save_html))
+    asyncio.run(
+        run_scraper(tags, args.output, args.session, args.fresh_login, args.save_html)
+    )
 
 
 if __name__ == "__main__":
