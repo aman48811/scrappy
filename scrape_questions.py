@@ -59,19 +59,20 @@ except ImportError:
 
 # ── Config  (only change INPUT_EXCEL to switch question sets) ─────────────────
 
-INPUT_EXCEL   = "PS_OG_questions.xlsx"   # <-- change this for other files
-OUTPUT_EXCEL  = None                     # auto-derived from input if not set
-SESSION_FILE  = "gmatclub_session.json"
-BATCH_SIZE    = 50                       # save progress every N questions
-LOGIN_URL     = "https://gmatclub.com/forum/ucp.php?mode=login"
-FORUM_HOME    = "https://gmatclub.com/forum/"
-CF_WAIT_MS    = 4000
-CF_RETRIES    = 20
-PAGE_TIMEOUT  = 60000
-CRAWL_DELAY   = 3        # seconds between question page requests
+INPUT_EXCEL = "PS_OG_questions.xlsx"  # <-- change this for other files
+OUTPUT_EXCEL = None  # auto-derived from input if not set
+SESSION_FILE = "gmatclub_session.json"
+BATCH_SIZE = 50  # save progress every N questions
+LOGIN_URL = "https://gmatclub.com/forum/ucp.php?mode=login"
+FORUM_HOME = "https://gmatclub.com/forum/"
+CF_WAIT_MS = 4000
+CF_RETRIES = 20
+PAGE_TIMEOUT = 60000
+CRAWL_DELAY = 3  # seconds between question page requests
 
 
 # ── Text Cleaners (ported from original scrapper-script.py) ──────────────────
+
 
 def clean_text(text: str) -> str:
     """Remove everything after 'Show Answer' button text."""
@@ -91,7 +92,9 @@ def extract_question_stem(text: str) -> str:
 def extract_statements(text: str):
     """Extract DS Statement 1 and Statement 2 from question text."""
     s1, s2 = "", ""
-    match1 = re.search(r"(?:1\)|Statement \(1\))(.+?)(?:2\)|Statement \(2\))", text, re.S)
+    match1 = re.search(
+        r"(?:1\)|Statement \(1\))(.+?)(?:2\)|Statement \(2\))", text, re.S
+    )
     match2 = re.search(r"(?:2\)|Statement \(2\))(.+)", text, re.S)
     if match1:
         s1 = match1.group(1).strip()
@@ -140,17 +143,18 @@ def extract_sources(tags: str) -> str:
 
 # ── Per-Page Extractors ───────────────────────────────────────────────────────
 
+
 def extract_full_tags(html: str):
     """
     Parse div#taglist a.tag_css_link[href*='tag_id='] from question page.
     Returns (tags_str, tag_ids_str)  -- labels stripped of leading/trailing spaces.
     """
-    soup   = BeautifulSoup(html, "html.parser")
+    soup = BeautifulSoup(html, "html.parser")
     taglist = soup.select("div#taglist a.tag_css_link[href*='tag_id=']")
     labels, ids = [], []
     for a in taglist:
-        label = a.get_text(strip=True)   # strip leading space noted in spec
-        m     = re.search(r"tag_id=(\d+)", a.get("href", ""))
+        label = a.get_text(strip=True)  # strip leading space noted in spec
+        m = re.search(r"tag_id=(\d+)", a.get("href", ""))
         if m and label:
             labels.append(label)
             ids.append(m.group(1))
@@ -159,7 +163,7 @@ def extract_full_tags(html: str):
 
 def extract_question_text(html: str):
     """Extract raw question text from first post .item.text selector."""
-    soup    = BeautifulSoup(html, "html.parser")
+    soup = BeautifulSoup(html, "html.parser")
     element = soup.select_one("#posts .post-wrapper.first-post .item.text")
     if element:
         return element.get_text("\n", strip=True)
@@ -171,13 +175,13 @@ def extract_expert_answer(html: str):
     Find the first post marked with .expert.box.top and return
     (expert_name, answer_detail).
     """
-    soup  = BeautifulSoup(html, "html.parser")
+    soup = BeautifulSoup(html, "html.parser")
     posts = soup.select(".post-wrapper.post-separator")
     for post in posts:
         if post.select_one(".expert.box.top"):
-            name_tag   = post.select_one(".poster-name")
+            name_tag = post.select_one(".poster-name")
             detail_tag = post.select_one(".item.text")
-            name   = name_tag.get_text(strip=True) if name_tag else ""
+            name = name_tag.get_text(strip=True) if name_tag else ""
             detail = detail_tag.get_text("\n", strip=True) if detail_tag else ""
             return name, detail
     return "no expert answer found", "no expert answer found"
@@ -185,11 +189,14 @@ def extract_expert_answer(html: str):
 
 # ── Cloudflare Wait ───────────────────────────────────────────────────────────
 
+
 async def wait_for_cloudflare(page) -> bool:
     for attempt in range(CF_RETRIES):
         content = await page.content()
-        if ("Just a moment" not in content and
-                "security verification" not in content.lower()):
+        if (
+            "Just a moment" not in content
+            and "security verification" not in content.lower()
+        ):
             return True
         print(f"    ⏳ Cloudflare... ({attempt + 1}/{CF_RETRIES})")
         await page.wait_for_timeout(CF_WAIT_MS)
@@ -197,6 +204,7 @@ async def wait_for_cloudflare(page) -> bool:
 
 
 # ── Login Handler ─────────────────────────────────────────────────────────────
+
 
 def is_logged_in(html: str) -> bool:
     indicators = ["ucp.php?mode=logout", "icon-svg-logout", "My Profile"]
@@ -230,7 +238,7 @@ async def login(page, session_file: str, fresh_login: bool = False) -> bool:
     await page.goto(LOGIN_URL, timeout=PAGE_TIMEOUT)
     await wait_for_cloudflare(page)
 
-    for i in range(36):    # 36 x 5s = 3 minutes
+    for i in range(36):  # 36 x 5s = 3 minutes
         if is_logged_in(await page.content()):
             print("\n    ✅  Login detected! Starting scrape...\n")
             cookies = await page.context.cookies()
@@ -247,6 +255,7 @@ async def login(page, session_file: str, fresh_login: bool = False) -> bool:
 
 # ── Tag Enrichment ────────────────────────────────────────────────────────────
 
+
 async def enrich_tags(page, rows: list) -> None:
     """
     Visit each question URL and replace Tags / Tag IDs with the
@@ -261,14 +270,14 @@ async def enrich_tags(page, rows: list) -> None:
             await page.goto(url, timeout=PAGE_TIMEOUT)
             await page.wait_for_load_state("networkidle", timeout=15000)
             html = await page.content()
-
+            # comment it out for login disble
             if not is_logged_in(html):
                 print("    ⚠️  Session expired during tag enrichment -- stopping.")
                 break
 
             tags_str, ids_str = extract_full_tags(html)
             if tags_str:
-                row["Tags"]    = tags_str
+                row["Tags"] = tags_str
                 row["Tag IDs"] = ids_str
         except Exception as e:
             print(f"    ✗ Failed: {e}")
@@ -278,6 +287,7 @@ async def enrich_tags(page, rows: list) -> None:
 
 # ── Core Question Scraper ─────────────────────────────────────────────────────
 
+
 async def scrape_question_page(page, url: str, row: dict) -> dict:
     """
     Visit a single question page and extract all content.
@@ -285,21 +295,21 @@ async def scrape_question_page(page, url: str, row: dict) -> dict:
     """
     result = {
         # Carry over Step 2 fields
-        "Title":        row.get("Title", ""),
-        "Category":     row.get("Category", ""),
-        "Tags":         row.get("Tags", ""),
-        "Tag IDs":      row.get("Tag IDs", ""),
-        "Link":         url,
+        "Title": row.get("Title", ""),
+        "Category": row.get("Category", ""),
+        "Tags": row.get("Tags", ""),
+        "Tag IDs": row.get("Tag IDs", ""),
+        "Link": url,
         # Step 3 fields (filled below)
-        "Difficulty":   "",
-        "Source":       "",
+        "Difficulty": "",
+        "Source": "",
         "Question+Text": "",
         "question-stem": "",
-        "Statement 1":  "",
-        "Statement 2":  "",
-        "answer-by":    "",
+        "Statement 1": "",
+        "Statement 2": "",
+        "answer-by": "",
         "answer-detail": "",
-        "answer":       "",
+        "answer": "",
     }
 
     try:
@@ -308,14 +318,13 @@ async def scrape_question_page(page, url: str, row: dict) -> dict:
 
         try:
             await page.wait_for_selector(
-                "#posts .post-wrapper.first-post .item.text",
-                timeout=20000
+                "#posts .post-wrapper.first-post .item.text", timeout=20000
             )
         except Exception:
             print(f"    ⚠️  Selector not found on: {url}")
 
         html = await page.content()
-
+        # comment it out for login disble
         if not is_logged_in(html):
             print(f"    ⚠️  Session expired on: {url}")
             result["Question+Text"] = "SESSION_EXPIRED"
@@ -324,27 +333,27 @@ async def scrape_question_page(page, url: str, row: dict) -> dict:
         # Full tags from question page (overrides search-card tags)
         tags_str, ids_str = extract_full_tags(html)
         if tags_str:
-            result["Tags"]    = tags_str
+            result["Tags"] = tags_str
             result["Tag IDs"] = ids_str
 
         # Derived from tags
         result["Difficulty"] = extract_difficulty(result["Tags"])
-        result["Source"]     = extract_sources(result["Tags"])
+        result["Source"] = extract_sources(result["Tags"])
 
         # Question text
         raw_text = extract_question_text(html)
-        cleaned  = clean_text(raw_text)
-        result["Question+Text"]  = cleaned
-        result["question-stem"]  = extract_question_stem(cleaned)
+        cleaned = clean_text(raw_text)
+        result["Question+Text"] = cleaned
+        result["question-stem"] = extract_question_stem(cleaned)
         s1, s2 = extract_statements(cleaned)
         result["Statement 1"] = s1
         result["Statement 2"] = s2
 
         # Expert answer
         answer_by, answer_detail = extract_expert_answer(html)
-        result["answer-by"]     = answer_by
+        result["answer-by"] = answer_by
         result["answer-detail"] = answer_detail
-        result["answer"]        = extract_answer_letter(answer_detail)
+        result["answer"] = extract_answer_letter(answer_detail)
 
     except Exception as e:
         print(f"    ✗ Failed ({url}): {e}")
@@ -357,29 +366,52 @@ async def scrape_question_page(page, url: str, row: dict) -> dict:
 
 HEADER_FILL = PatternFill("solid", fgColor="1F4E79")
 HEADER_FONT = Font(bold=True, color="FFFFFF", size=11)
-ALT_FILL    = PatternFill("solid", fgColor="EBF3FB")
+ALT_FILL = PatternFill("solid", fgColor="EBF3FB")
 
 COLUMN_ORDER = [
-    "No", "Title", "Category", "Difficulty", "Source",
-    "Tags", "Tag IDs", "Link",
-    "Question+Text", "question-stem", "Statement 1", "Statement 2",
-    "answer-by", "answer-detail", "answer",
+    "No",
+    "Title",
+    "Category",
+    "Difficulty",
+    "Source",
+    "Tags",
+    "Tag IDs",
+    "Link",
+    "Question+Text",
+    "question-stem",
+    "Statement 1",
+    "Statement 2",
+    "answer-by",
+    "answer-detail",
+    "answer",
 ]
 
 COL_WIDTHS = {
-    "No": 5, "Title": 50, "Category": 22, "Difficulty": 22, "Source": 35,
-    "Tags": 60, "Tag IDs": 30, "Link": 30,
-    "Question+Text": 60, "question-stem": 50,
-    "Statement 1": 40, "Statement 2": 40,
-    "answer-by": 18, "answer-detail": 70, "answer": 10,
+    "No": 5,
+    "Title": 50,
+    "Category": 22,
+    "Difficulty": 22,
+    "Source": 35,
+    "Tags": 60,
+    "Tag IDs": 30,
+    "Link": 30,
+    "Question+Text": 60,
+    "question-stem": 50,
+    "Statement 1": 40,
+    "Statement 2": 40,
+    "answer-by": 18,
+    "answer-detail": 70,
+    "answer": 10,
 }
 
 
 def _style_sheet(ws):
     for cell in ws[1]:
-        cell.fill      = HEADER_FILL
-        cell.font      = HEADER_FONT
-        cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        cell.fill = HEADER_FILL
+        cell.font = HEADER_FONT
+        cell.alignment = Alignment(
+            horizontal="center", vertical="center", wrap_text=True
+        )
 
     link_col = None
     for idx, cell in enumerate(ws[1], 1):
@@ -398,7 +430,9 @@ def _style_sheet(ws):
 
     for col_cells in ws.columns:
         header = col_cells[0].value
-        ws.column_dimensions[col_cells[0].column_letter].width = COL_WIDTHS.get(header, 20)
+        ws.column_dimensions[col_cells[0].column_letter].width = COL_WIDTHS.get(
+            header, 20
+        )
 
     ws.row_dimensions[1].height = 28
     ws.freeze_panes = "A2"
@@ -428,6 +462,7 @@ def save_results(results: list, output_path: str) -> None:
 
 # ── Master Orchestrator ───────────────────────────────────────────────────────
 
+
 async def run_pipeline(
     input_excel: str,
     output_excel: str,
@@ -447,13 +482,26 @@ async def run_pipeline(
 
     # Apply start_row offset (1-indexed, matches "No" column)
     if start_row > 1:
-        rows = rows[start_row - 1:]
+        rows = rows[start_row - 1 :]
         print(f"    ▶  Resuming from row {start_row} ({len(rows)} questions remaining)")
     else:
         print(f"    ▶  {len(rows)} questions to process")
 
-    results     = []
-    batch_count = 0
+    results = []
+
+    # Auto-resume: if output file already exists and --start-row not given, skip done rows
+    output_path_obj = Path(output_excel)
+    if output_path_obj.exists() and start_row == 1:
+        try:
+            df_existing = pd.read_excel(output_excel)
+            done_links = set(df_existing["Link"].dropna().astype(str))
+            rows = [r for r in rows if str(r.get("Link", "")).strip() not in done_links]
+            results = df_existing.to_dict("records")
+            print(
+                f"    ♻  Auto-resume: {len(done_links)} already done, {len(rows)} remaining"
+            )
+        except Exception as e:
+            print(f"    ⚠  Could not auto-resume from {output_excel}: {e}")
 
     async with async_playwright() as p:
         browser = await p.chromium.launch(
@@ -465,11 +513,10 @@ async def run_pipeline(
             ],
         )
         context = await browser.new_context()
-        page    = await context.new_page()
+        page = await context.new_page()
         await page.add_init_script(
             "Object.defineProperty(navigator,'webdriver',{get:()=>undefined})"
         )
-
         # Login
         if not await login(page, session_file, fresh_login):
             await browser.close()
@@ -502,12 +549,17 @@ async def run_pipeline(
 
             await asyncio.sleep(CRAWL_DELAY)
 
-            # Save batch checkpoint
+            # Save checkpoint to rolling output file, then prompt to continue or stop
             if i % BATCH_SIZE == 0:
-                batch_count += 1
-                checkpoint = output_excel.replace(".xlsx", f"_checkpoint_{batch_count}.xlsx")
-                save_results(results, checkpoint)
-                print(f"\n  📦  Checkpoint saved: {checkpoint}\n")
+                save_results(results, output_excel)
+                print(f"\n  📦  Checkpoint: {len(results)} rows saved → {output_excel}")
+                answer = await asyncio.get_event_loop().run_in_executor(
+                    None, input, "  ▶  Press Enter to continue, or type 'q' to stop: "
+                )
+                if answer.strip().lower() == "q":
+                    print("  🛑  Stopped by user.")
+                    break
+                print()
 
         await browser.close()
 
@@ -519,6 +571,7 @@ async def run_pipeline(
 
 
 # ── CLI ───────────────────────────────────────────────────────────────────────
+
 
 def main():
     parser = argparse.ArgumentParser(
@@ -532,31 +585,38 @@ Examples:
   python scrape_questions.py --input PS_OG_questions.xlsx --enrich-tags
   python scrape_questions.py --start-row 101   # resume after a crash at row 100
   python scrape_questions.py --fresh-login     # force re-login
-        """
+        """,
     )
     parser.add_argument(
-        "--input", default=INPUT_EXCEL,
-        help=f"Input Excel with question links (default: {INPUT_EXCEL})"
+        "--input",
+        default=INPUT_EXCEL,
+        help=f"Input Excel with question links (default: {INPUT_EXCEL})",
     )
     parser.add_argument(
-        "--output", default=None,
-        help="Output Excel filename (default: <input_name>_extracted.xlsx)"
+        "--output",
+        default=None,
+        help="Output Excel filename (default: <input_name>_extracted.xlsx)",
     )
     parser.add_argument(
-        "--session", default=SESSION_FILE,
-        help=f"Session cookie file (default: {SESSION_FILE})"
+        "--session",
+        default=SESSION_FILE,
+        help=f"Session cookie file (default: {SESSION_FILE})",
     )
     parser.add_argument(
-        "--fresh-login", action="store_true",
-        help="Force re-login even if saved session exists"
+        "--fresh-login",
+        action="store_true",
+        help="Force re-login even if saved session exists",
     )
     parser.add_argument(
-        "--enrich-tags", action="store_true",
-        help="First pass: visit each question page to get full tag list from div#taglist"
+        "--enrich-tags",
+        action="store_true",
+        help="First pass: visit each question page to get full tag list from div#taglist",
     )
     parser.add_argument(
-        "--start-row", type=int, default=1,
-        help="Resume from this row number (1-indexed, skips earlier rows)"
+        "--start-row",
+        type=int,
+        default=1,
+        help="Resume from this row number (1-indexed, skips earlier rows)",
     )
     args = parser.parse_args()
 
@@ -583,18 +643,21 @@ Examples:
 
     try:
         import nest_asyncio
+
         nest_asyncio.apply()
     except ImportError:
         pass
 
-    asyncio.run(run_pipeline(
-        input_excel      = str(input_path),
-        output_excel     = output_path,
-        session_file     = args.session,
-        fresh_login      = args.fresh_login,
-        enrich_tags_flag = args.enrich_tags,
-        start_row        = args.start_row,
-    ))
+    asyncio.run(
+        run_pipeline(
+            input_excel=str(input_path),
+            output_excel=output_path,
+            session_file=args.session,
+            fresh_login=args.fresh_login,
+            enrich_tags_flag=args.enrich_tags,
+            start_row=args.start_row,
+        )
+    )
 
 
 if __name__ == "__main__":
