@@ -1,8 +1,8 @@
 """
-GMAT Club -- PS x Source: OG  Full Scraper  (with Login)
+GMAT Club -- DS x Source: OG  Full Scraper  (with Login)
 =========================================================
 Scrapes ALL questions tagged with any "Source: OG *" tag
-inside the Problem Solving (PS) category.
+inside the Data Sufficiency (DS) category.
 
 Login Strategy
 --------------
@@ -13,7 +13,7 @@ Login Strategy
 
 What it does
 ------------
-1. Reads gmatclub_tags.xlsx (built in Step 1) to get the 14 PS Source:OG tag IDs
+1. Reads gmatclub_tags.xlsx (built in Step 1) to get the 14 DS Source:OG tag IDs
 2. For each tag ID, paginates through ALL search result pages (start=0,50,100...)
 3. From every question card captures:
       Title, Link, Category, Tags (labels), Tag IDs
@@ -25,13 +25,13 @@ What it does
 
 Output
 ------
-  PS_OG_questions.xlsx
+  DS_OG_questions.xlsx
 
 Usage
 -----
-  python scrape_ps_og.py                              # normal run (login if needed)
-  python scrape_ps_og.py --fresh-login                # force re-login even if session exists
-  python scrape_ps_og.py --test-html Search-by-tags.html  # offline test
+  python scrape_ds_og.py                              # normal run (login if needed)
+  python scrape_ds_og.py --fresh-login                # force re-login even if session exists
+  python scrape_ds_og.py --test-html Search-by-tags.html  # offline test
 """
 
 import argparse
@@ -104,6 +104,14 @@ def build_url(tag_id: int, start: int = 0) -> str:
 
 
 # ── HTML Parser ───────────────────────────────────────────────────────────────
+def extract_sources(tags: str) -> str:
+    """Pull all Source tags, strip the 'Source: ' prefix, join with ' | '."""
+    sources = []
+    for part in tags.split(" | "):
+        p = part.strip()
+        if p.startswith("Source:"):
+            sources.append(p.replace("Source:", "").strip())
+    return " | ".join(sources)
 
 
 def parse_page(html: str):
@@ -154,6 +162,7 @@ def parse_page(html: str):
                 "Category": category,
                 "Tags": " | ".join(tag_labels),
                 "Tag IDs": " | ".join(tag_ids),
+                "Source": extract_sources(" | ".join(tag_labels)),
             }
         )
 
@@ -179,19 +188,32 @@ async def wait_for_cloudflare(page) -> bool:
 # ── Login Handler ─────────────────────────────────────────────────────────────
 
 
-def is_logged_in(html: str, current_url: str = "") -> bool:
-    """Detect if the current page shows a logged-in user."""
-    # If we're still on the login page, we definitely aren't logged in yet
-    # (the login page itself can contain the word "logout" in its HTML)
-    if "ucp.php?mode=login" in current_url:
-        return False
-    indicators = [
-        "ucp.php?mode=logout",
-        'class="icon-svg-logout"',
-        "My Profile",
-    ]
+def is_logged_in(html: str) -> bool:
+    """Detect if the current page shows a logged-in user.
+    Uses multiple indicators to avoid false positives.
+    """
     html_lower = html.lower()
-    return any(ind.lower() in html_lower for ind in indicators)
+
+    # Must have logout indicator (icon or URL)
+    has_logout = 'class="icon-svg-logout"' in html or "ucp.php?mode=logout" in html
+
+    # Must NOT have login form
+    has_login_form = (
+        'name="username"' in html
+        or 'id="username"' in html
+        or 'type="password"' in html
+    )
+
+    # Should have user profile or dashboard indicators
+    has_user_area = (
+        "my profile" in html_lower
+        or "my posts" in html_lower
+        or "my profile" in html_lower
+        or 'class="user-panel"' in html
+        or "data-user-logged-in" in html
+    )
+
+    return has_logout and not has_login_form and has_user_area
 
 
 async def login(page, session_file: str, fresh_login: bool = False) -> bool:
@@ -211,13 +233,22 @@ async def login(page, session_file: str, fresh_login: bool = False) -> bool:
             await page.goto(FORUM_HOME, timeout=PAGE_TIMEOUT)
             await wait_for_cloudflare(page)
             html = await page.content()
-            if is_logged_in(html, page.url):
+            if is_logged_in(html):
                 print("    ✅  Session restored -- already logged in!")
                 return True
             else:
                 print("    ⚠️  Saved session expired -- need to log in again.")
+                # Delete expired session
+                try:
+                    session_path.unlink()
+                except:
+                    pass
         except Exception as e:
             print(f"    ⚠️  Could not restore session: {e}")
+            try:
+                session_path.unlink()
+            except:
+                pass
 
     # ── Manual login ─────────────────────────────────────────────────────────
     print("\n🔐  Opening GMAT Club login page...")
@@ -230,17 +261,17 @@ async def login(page, session_file: str, fresh_login: bool = False) -> bool:
 
     # Wait up to 3 minutes for user to log in
     for i in range(36):  # 36 x 5s = 180s = 3 minutes
-        await page.wait_for_timeout(5000)
         html = await page.content()
-        if is_logged_in(html, page.url):
+        if is_logged_in(html):
             print("\n    ✅  Login detected! Starting scrape...\n")
             # Save session cookies for next run
             cookies = await page.context.cookies()
             session_path.write_text(json.dumps(cookies, indent=2))
             print(f"    💾  Session saved to {session_file} (reused on next run)")
             return True
-        remaining = (36 - i - 1) * 5
+        remaining = (36 - i) * 5
         print(f"    ⏳  Waiting for login... ({remaining}s remaining)", end="\r")
+        await page.wait_for_timeout(5000)
 
     print("\n    ❌  Login timeout. Please run the script again.")
     return False
@@ -249,7 +280,7 @@ async def login(page, session_file: str, fresh_login: bool = False) -> bool:
 # ── Per-Tag Paginator ─────────────────────────────────────────────────────────
 
 
-async def scrape_one_tag(page, tag: dict, seen_links: set, save_html: str = "") -> list:
+async def scrape_one_tag(page, tag: dict, seen_links: set) -> list:
     tag_id = tag["tag_id"]
     tag_label = tag["tag_label"]
     collected = []
@@ -264,8 +295,6 @@ async def scrape_one_tag(page, tag: dict, seen_links: set, save_html: str = "") 
 
         try:
             await page.goto(url, timeout=PAGE_TIMEOUT)
-            # Wait for JS to finish populating links and tags
-            await page.wait_for_load_state("networkidle", timeout=PAGE_TIMEOUT)
         except Exception as e:
             print(f"    ✗ Navigation failed: {e}")
             break
@@ -276,14 +305,9 @@ async def scrape_one_tag(page, tag: dict, seen_links: set, save_html: str = "") 
 
         # Safety check: did we get logged out mid-scrape?
         html = await page.content()
-        if not is_logged_in(html, page.url):
+        if not is_logged_in(html):
             print("    ⚠️  Session expired mid-scrape! Please re-run the script.")
             break
-
-        # Save first page HTML for debugging if requested
-        if save_html and page_num == 1 and start == 0:
-            Path(save_html).write_text(html, encoding="utf-8")
-            print(f"    💾  Saved page HTML to {save_html}")
 
         rows, done = parse_page(html)
 
@@ -318,9 +342,7 @@ async def scrape_one_tag(page, tag: dict, seen_links: set, save_html: str = "") 
 # ── Master Orchestrator ───────────────────────────────────────────────────────
 
 
-async def run_scraper(
-    tags: list, output: str, session_file: str, fresh_login: bool, save_html: str = ""
-):
+async def run_scraper(tags: list, output: str, session_file: str, fresh_login: bool):
     all_rows = []
     seen_links = set()
     tag_buckets = {}
@@ -350,7 +372,7 @@ async def run_scraper(
 
         # Scrape all tags
         for tag in tags:
-            rows = await scrape_one_tag(page, tag, seen_links, save_html=save_html)
+            rows = await scrape_one_tag(page, tag, seen_links)
             tag_buckets[tag["tag_label"]] = rows
             all_rows.extend(rows)
             print(f"    📦  {tag['tag_label']}: {len(rows)} unique questions")
@@ -384,20 +406,6 @@ def run_offline(tags: list, html_file: str, output: str):
 
 
 # ── Excel Saver ───────────────────────────────────────────────────────────────
-
-# openpyxl rejects control characters outside the allowed XML 1.0 range
-_ILLEGAL_CHARS = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f]")
-
-
-def _clean(value):
-    if isinstance(value, str):
-        return _ILLEGAL_CHARS.sub("", value)
-    return value
-
-
-def _clean_df(df: pd.DataFrame) -> pd.DataFrame:
-    return df.applymap(_clean)
-
 
 HEADER_FILL = PatternFill("solid", fgColor="1F4E79")
 HEADER_FONT = Font(bold=True, color="FFFFFF", size=11)
@@ -450,7 +458,7 @@ def save_excel(all_rows: list, tag_buckets: dict, path: str):
         print("⚠️  No data to save.")
         return
 
-    all_df = _clean_df(pd.DataFrame(all_rows))
+    all_df = pd.DataFrame(all_rows)
     all_df.insert(0, "No", range(1, len(all_df) + 1))
 
     summary_rows = [
@@ -479,7 +487,7 @@ def save_excel(all_rows: list, tag_buckets: dict, path: str):
             if not rows:
                 continue
             sheet_name = tag_label.replace("Source: ", "")[:31]
-            t_df = _clean_df(pd.DataFrame(rows))
+            t_df = pd.DataFrame(rows)
             t_df.insert(0, "No", range(1, len(t_df) + 1))
             t_df.to_excel(writer, sheet_name=sheet_name, index=False)
             _style_sheet(writer.sheets[sheet_name], t_df)
@@ -494,7 +502,7 @@ def save_excel(all_rows: list, tag_buckets: dict, path: str):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Scrape GMAT Club PS x Source:OG questions (with login)"
+        description="Scrape GMAT Club DS x Source:OG questions (with login)"
     )
     parser.add_argument(
         "--tags-excel",
@@ -521,12 +529,6 @@ def main():
         metavar="FILE",
         help="Offline test: parse a saved HTML instead of launching browser",
     )
-    parser.add_argument(
-        "--save-html",
-        metavar="FILE",
-        default="",
-        help="Save the first scraped page's HTML to FILE for debugging",
-    )
     args = parser.parse_args()
 
     # Resolve tags excel path
@@ -551,9 +553,7 @@ def main():
     except ImportError:
         pass
 
-    asyncio.run(
-        run_scraper(tags, args.output, args.session, args.fresh_login, args.save_html)
-    )
+    asyncio.run(run_scraper(tags, args.output, args.session, args.fresh_login))
 
 
 if __name__ == "__main__":

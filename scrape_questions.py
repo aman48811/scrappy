@@ -32,7 +32,7 @@ Usage
   python scrape_questions.py                          # uses default INPUT_EXCEL
   python scrape_questions.py --input PS_OG_questions.xlsx
   python scrape_questions.py --input DS_OG_questions.xlsx --output DS_full.xlsx
-  python scrape_questions.py --input PS_OG_questions.xlsx --enrich-tags
+  python scrape_questions.py --input DS_OG_questions.xlsx --enrich-tags
   python scrape_questions.py --fresh-login            # force re-login
   python scrape_questions.py --start-row 51           # resume from row 51
 """
@@ -59,7 +59,7 @@ except ImportError:
 
 # ── Config  (only change INPUT_EXCEL to switch question sets) ─────────────────
 
-INPUT_EXCEL = "PS_OG_questions.xlsx"  # <-- change this for other files
+INPUT_EXCEL = "DS_OG_questions.xlsx"  # <-- change this for other files
 OUTPUT_EXCEL = None  # auto-derived from input if not set
 SESSION_FILE = "gmatclub_session.json"
 BATCH_SIZE = 50  # save progress every N questions
