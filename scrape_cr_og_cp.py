@@ -412,7 +412,7 @@ def parse_question_page(html: str) -> dict:
 
 async def wait_for_cloudflare(page) -> bool:
     for attempt in range(CF_RETRIES):
-        content = await page.content()
+        content = await _safe_page_content(page)
         if (
             "Just a moment" not in content
             and "security verification" not in content.lower()
@@ -421,6 +421,21 @@ async def wait_for_cloudflare(page) -> bool:
         print(f"    ⏳ Cloudflare... ({attempt + 1}/{CF_RETRIES})")
         await page.wait_for_timeout(CF_WAIT_MS)
     return False
+
+
+async def _safe_page_content(page, retries: int = 3, delay_ms: int = 500) -> str:
+    for attempt in range(retries):
+        try:
+            return await page.content()
+        except Exception as exc:
+            message = str(exc).lower()
+            if "page.content" not in message or "navigating" not in message:
+                raise
+            if attempt == retries - 1:
+                raise
+            await page.wait_for_load_state("load", timeout=PAGE_TIMEOUT)
+            await page.wait_for_timeout(delay_ms)
+    return await page.content()
 
 
 # ── Login Handler ─────────────────────────────────────────────────────────────
@@ -448,7 +463,7 @@ async def login(page, session_file: str, fresh_login: bool = False) -> bool:
             await page.context.add_cookies(cookies)
             await page.goto(FORUM_HOME, timeout=PAGE_TIMEOUT)
             await wait_for_cloudflare(page)
-            if is_logged_in(await page.content()):
+            if is_logged_in(await _safe_page_content(page)):
                 print("    ✅  Session restored -- already logged in!")
                 return True
             print("    ⚠️  Saved session expired -- need to log in again.")
@@ -467,7 +482,7 @@ async def login(page, session_file: str, fresh_login: bool = False) -> bool:
     await wait_for_cloudflare(page)
 
     for i in range(36):
-        if is_logged_in(await page.content()):
+        if is_logged_in(await _safe_page_content(page)):
             print("\n    ✅  Login detected! Starting scrape...\n")
             cookies = await page.context.cookies()
             session_path.write_text(json.dumps(cookies, indent=2))
@@ -508,7 +523,7 @@ async def collect_links_for_tag(page, tag: dict, seen_links: set) -> list:
             print("    ⚠️  Cloudflare did not clear -- skipping this tag.")
             break
 
-        html = await page.content()
+        html = await _safe_page_content(page)
         if not is_logged_in(html):
             print("    ⚠️  Session expired mid-scrape! Please re-run.")
             break
@@ -575,13 +590,7 @@ async def fetch_all_content(
             except Exception:
                 pass
 
-            html = await page.content()
-
-            if not is_logged_in(html):
-                print("⚠️  Session expired -- saving and stopping.")
-                break
-
-            content = parse_question_page(html)
+            html = await _safe_page_content(page)
 
             # Merge: question-page tags override search-card tags
             merged = {**row}

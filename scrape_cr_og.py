@@ -68,51 +68,64 @@ except ImportError:
 
 # ── Config ────────────────────────────────────────────────────────────────────
 
-TAGS_EXCEL      = "gmatclub_tags.xlsx"
-OUTPUT_EXCEL    = "CR_OG_questions.xlsx"
-SESSION_FILE    = "gmatclub_session.json"   # saved cookies -- reused across runs
-LOGIN_URL       = "https://gmatclub.com/forum/ucp.php?mode=login"
-FORUM_HOME      = "https://gmatclub.com/forum/"
+TAGS_EXCEL = "gmatclub_tags.xlsx"
+OUTPUT_EXCEL = "CR_OG_questions.xlsx"
+SESSION_FILE = "gmatclub_session.json"  # saved cookies -- reused across runs
+LOGIN_URL = "https://gmatclub.com/forum/ucp.php?mode=login"
+FORUM_HOME = "https://gmatclub.com/forum/"
 BASE_SEARCH_URL = "https://gmatclub.com/forum/search.php"
-PAGE_SIZE       = 50
-NO_RESULTS_MSG  = "No suitable matches were found."
-CF_WAIT_MS      = 4000
-CF_RETRIES      = 20
-PAGE_TIMEOUT    = 60000
-CRAWL_DELAY     = 2       # seconds between search-result page requests
-CONTENT_DELAY   = 1.5     # seconds between individual question page fetches
+PAGE_SIZE = 50
+NO_RESULTS_MSG = "No suitable matches were found."
+CF_WAIT_MS = 4000
+CF_RETRIES = 20
+PAGE_TIMEOUT = 60000
+CRAWL_DELAY = 2  # seconds between search-result page requests
+CONTENT_DELAY = 1.5  # seconds between individual question page fetches
 
 COL_ORDER = [
-    "No", "Title", "Link", "Category", "Tags", "Tag IDs", "Source",
-    "Question Stem", "Question + Text", "A", "B", "C", "D", "E", "Answer",
+    "No",
+    "Title",
+    "Link",
+    "Category",
+    "Tags",
+    "Tag IDs",
+    "Source",
+    "Question Stem",
+    "Question + Text",
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "Answer",
 ]
 
 COL_WIDTHS = {
-    "No":              6,
-    "Title":           45,
-    "Link":            30,
-    "Category":        22,
-    "Tags":            55,
-    "Tag IDs":         25,
-    "Source":          22,
-    "Question Stem":   60,
+    "No": 6,
+    "Title": 45,
+    "Link": 30,
+    "Category": 22,
+    "Tags": 55,
+    "Tag IDs": 25,
+    "Source": 22,
+    "Question Stem": 60,
     "Question + Text": 80,
-    "A":               55,
-    "B":               55,
-    "C":               55,
-    "D":               55,
-    "E":               55,
-    "Answer":          10,
+    "A": 55,
+    "B": 55,
+    "C": 55,
+    "D": 55,
+    "E": 55,
+    "Answer": 10,
 }
 
 
 # ── Load Target Tags ──────────────────────────────────────────────────────────
 
+
 def load_cr_og_tags(tags_excel: str) -> list:
-    df   = pd.read_excel(tags_excel, sheet_name="All Tags")
-    mask = (
-        (df["Category"] == "Critical Reasoning (CR)") &
-        (df["Tag Label"].str.startswith("Source: OG"))
+    df = pd.read_excel(tags_excel, sheet_name="All Tags")
+    mask = (df["Category"] == "Critical Reasoning (CR)") & (
+        df["Tag Label"].str.startswith("Source: OG")
     )
     rows = df[mask][["Tag ID", "Tag Label"]].reset_index(drop=True)
     tags = [
@@ -127,6 +140,7 @@ def load_cr_og_tags(tags_excel: str) -> list:
 
 # ── URL Builder ───────────────────────────────────────────────────────────────
 
+
 def build_url(tag_id: int, start: int = 0) -> str:
     params = [
         ("selected_search_tags[]", tag_id),
@@ -140,6 +154,7 @@ def build_url(tag_id: int, start: int = 0) -> str:
 
 # ── Search Page Parser ────────────────────────────────────────────────────────
 
+
 def parse_search_page(html: str):
     """
     Returns (questions_list, is_done).
@@ -148,7 +163,7 @@ def parse_search_page(html: str):
     if NO_RESULTS_MSG in html:
         return [], True
 
-    soup  = BeautifulSoup(html, "html.parser")
+    soup = BeautifulSoup(html, "html.parser")
     cards = soup.select("div.topicsName")
     if not cards:
         return [], False
@@ -159,35 +174,37 @@ def parse_search_page(html: str):
         if not link_tag:
             continue
 
-        href  = link_tag.get("href", "").strip()
+        href = link_tag.get("href", "").strip()
         title = link_tag.get("title", "").strip()
         if not title:
-            span  = link_tag.select_one("span.topicTitle")
+            span = link_tag.select_one("span.topicTitle")
             title = span.get_text(strip=True) if span else ""
         if href.startswith("/"):
             href = "https://gmatclub.com" + href
 
-        cat_tag  = card.select_one("p > a")
+        cat_tag = card.select_one("p > a")
         category = cat_tag.get_text(strip=True) if cat_tag else ""
 
-        tags_div   = card.select_one("div.topic-tags")
+        tags_div = card.select_one("div.topic-tags")
         tag_labels = []
-        tag_ids    = []
+        tag_ids = []
         if tags_div:
             for a in tags_div.select("a[href*='tag_id=']"):
                 lbl = a.get_text(strip=True)
-                m   = re.search(r"tag_id=(\d+)", a.get("href", ""))
+                m = re.search(r"tag_id=(\d+)", a.get("href", ""))
                 if m:
                     tag_labels.append(lbl)
                     tag_ids.append(m.group(1))
 
-        questions.append({
-            "Title":    title,
-            "Link":     href,
-            "Category": category,
-            "Tags":     " | ".join(tag_labels),
-            "Tag IDs":  " | ".join(tag_ids),
-        })
+        questions.append(
+            {
+                "Title": title,
+                "Link": href,
+                "Category": category,
+                "Tags": " | ".join(tag_labels),
+                "Tag IDs": " | ".join(tag_ids),
+            }
+        )
 
     return questions, False
 
@@ -195,25 +212,29 @@ def parse_search_page(html: str):
 # ── Question Page Parser ──────────────────────────────────────────────────────
 
 # Matches an option line: letter A-E, followed by zero-width space / nbsp / regular space
-_OPT_RE = re.compile(r'^([A-E])[​  \t]+(.+)$')
+_OPT_RE = re.compile(r"^([A-E])[​  \t]+(.+)$")
 
 
 def _clean_text(text: str) -> str:
     """Strip zero-width characters and collapse excessive whitespace."""
-    text = text.replace('​', '').replace('‏', '').replace('­', '')
-    text = re.sub(r'[ \t]+', ' ', text)      # collapse horizontal whitespace
-    text = re.sub(r'\n{3,}', '\n\n', text)   # at most double newlines
+    text = text.replace("​", "").replace("‏", "").replace("­", "")
+    text = re.sub(r"[ \t]+", " ", text)  # collapse horizontal whitespace
+    text = re.sub(r"\n{3,}", "\n\n", text)  # at most double newlines
     return text.strip()
 
 
 def _empty_content(source: str = "", tags: str = "", tag_ids: str = "") -> dict:
     return {
-        "Question Stem":   "",
+        "Question Stem": "",
         "Question + Text": "",
-        "A": "", "B": "", "C": "", "D": "", "E": "",
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": "",
+        "E": "",
         "Answer": "",
-        "Source":  source,
-        "Tags":    tags,
+        "Source": source,
+        "Tags": tags,
         "Tag IDs": tag_ids,
     }
 
@@ -233,14 +254,14 @@ def parse_question_page(html: str) -> dict:
     if taglist_div:
         for a in taglist_div.select("a.tag_css_link"):
             lbl = a.get_text(strip=True)
-            m   = re.search(r"tag_id=(\d+)", a.get("href", ""))
+            m = re.search(r"tag_id=(\d+)", a.get("href", ""))
             if lbl and m:
                 tag_labels.append(lbl)
                 tag_ids.append(m.group(1))
             if lbl.startswith("Source:") and not source:
                 source = lbl
 
-    tags_str    = " | ".join(tag_labels)
+    tags_str = " | ".join(tag_labels)
     tag_ids_str = " | ".join(tag_ids)
 
     # ── First post content ────────────────────────────────────────────────────
@@ -252,11 +273,17 @@ def parse_question_page(html: str) -> dict:
     spoiler = item_text.select_one("div[id^='spoiler_']")
     raw_answer = spoiler.get_text(strip=True) if spoiler else ""
     # Grab only the first capital letter (handles "B " or "B or C" etc.)
-    answer_match = re.search(r'[A-E]', raw_answer)
+    answer_match = re.search(r"[A-E]", raw_answer)
     answer = answer_match.group(0) if answer_match else raw_answer.strip()
 
     # Remove non-question elements before text extraction
-    for sel in ("div.twoRowsBlock", "div.post_signature", "div.answer-block", "script", "style"):
+    for sel in (
+        "div.twoRowsBlock",
+        "div.post_signature",
+        "div.answer-block",
+        "script",
+        "style",
+    ):
         for el in item_text.select(sel):
             el.decompose()
 
@@ -265,72 +292,73 @@ def parse_question_page(html: str) -> dict:
         br.replace_with("\n")
 
     raw_text = item_text.get_text(separator="")
-    text     = _clean_text(raw_text)
+    text = _clean_text(raw_text)
 
     # ── Identify option lines ─────────────────────────────────────────────────
     lines = [l.strip() for l in text.split("\n")]
 
-    options     = {}   # {"A": "text", "B": "text", ...}
+    options = {}  # {"A": "text", "B": "text", ...}
     opt_start_i = None
 
     for i, line in enumerate(lines):
         m = _OPT_RE.match(line)
         if m:
-            letter   = m.group(1)
+            letter = m.group(1)
             opt_text = m.group(2).strip()
-            if letter not in options:       # first match per letter wins
+            if letter not in options:  # first match per letter wins
                 options[letter] = opt_text
                 if opt_start_i is None:
                     opt_start_i = i
 
     # ── Split passage and question stem ───────────────────────────────────────
     pre_lines = lines[:opt_start_i] if opt_start_i is not None else lines
-    pre_text  = "\n".join(pre_lines)
+    pre_text = "\n".join(pre_lines)
 
     # Paragraphs = sections separated by one or more blank lines
-    paragraphs = [p.strip() for p in re.split(r'\n{2,}', pre_text) if p.strip()]
+    paragraphs = [p.strip() for p in re.split(r"\n{2,}", pre_text) if p.strip()]
 
     if len(paragraphs) >= 2:
         question_stem = paragraphs[-1]
-        passage       = "\n\n".join(paragraphs[:-1])
+        passage = "\n\n".join(paragraphs[:-1])
     elif paragraphs:
         question_stem = paragraphs[0]
-        passage       = ""
+        passage = ""
     else:
         question_stem = ""
-        passage       = ""
+        passage = ""
 
     # ── Build "Question + Text" (full passage + stem + all options) ───────────
     option_block = "\n".join(
-        f"{letter} {options[letter]}"
-        for letter in "ABCDE"
-        if options.get(letter)
+        f"{letter} {options[letter]}" for letter in "ABCDE" if options.get(letter)
     )
     full_text_parts = [p for p in [passage, question_stem, option_block] if p]
     full_text = "\n\n".join(full_text_parts)
 
     return {
-        "Question Stem":   question_stem,
+        "Question Stem": question_stem,
         "Question + Text": full_text,
         "A": options.get("A", ""),
         "B": options.get("B", ""),
         "C": options.get("C", ""),
         "D": options.get("D", ""),
         "E": options.get("E", ""),
-        "Answer":  answer,
-        "Source":  source,
-        "Tags":    tags_str,
+        "Answer": answer,
+        "Source": source,
+        "Tags": tags_str,
         "Tag IDs": tag_ids_str,
     }
 
 
 # ── Cloudflare Wait ───────────────────────────────────────────────────────────
 
+
 async def wait_for_cloudflare(page) -> bool:
     for attempt in range(CF_RETRIES):
         content = await page.content()
-        if ("Just a moment" not in content and
-                "security verification" not in content.lower()):
+        if (
+            "Just a moment" not in content
+            and "security verification" not in content.lower()
+        ):
             return True
         print(f"    ⏳ Cloudflare... ({attempt + 1}/{CF_RETRIES})")
         await page.wait_for_timeout(CF_WAIT_MS)
@@ -339,12 +367,13 @@ async def wait_for_cloudflare(page) -> bool:
 
 # ── Login Handler ─────────────────────────────────────────────────────────────
 
+
 def is_logged_in(html: str) -> bool:
     """Detect if the current page shows a logged-in user."""
     indicators = [
         "logout",
         "ucp.php?mode=logout",
-        "class=\"icon-svg-logout\"",
+        'class="icon-svg-logout"',
         "My Profile",
     ]
     html_lower = html.lower()
@@ -385,7 +414,7 @@ async def login(page, session_file: str, fresh_login: bool = False) -> bool:
     await page.goto(LOGIN_URL, timeout=PAGE_TIMEOUT)
     await wait_for_cloudflare(page)
 
-    for i in range(36):     # 36 x 5s = 180s = 3 minutes
+    for i in range(36):  # 36 x 5s = 180s = 3 minutes
         html = await page.content()
         if is_logged_in(html):
             print("\n    ✅  Login detected! Starting scrape...\n")
@@ -403,12 +432,13 @@ async def login(page, session_file: str, fresh_login: bool = False) -> bool:
 
 # ── Phase 1: Collect Links per Tag ────────────────────────────────────────────
 
+
 async def collect_links_for_tag(page, tag: dict, seen_links: set) -> list:
-    tag_id    = tag["tag_id"]
+    tag_id = tag["tag_id"]
     tag_label = tag["tag_label"]
     collected = []
-    start     = 0
-    page_num  = 1
+    start = 0
+    page_num = 1
 
     print(f"\n  ── {tag_label}  (id={tag_id}) ──────────────────────────")
 
@@ -447,13 +477,15 @@ async def collect_links_for_tag(page, tag: dict, seen_links: set) -> list:
         collected.extend(new_rows)
 
         dupes = len(rows) - len(new_rows)
-        print(f"    ✓  {len(new_rows):>3} new  |  {dupes:>3} dupes  |  tag total: {len(collected)}")
+        print(
+            f"    ✓  {len(new_rows):>3} new  |  {dupes:>3} dupes  |  tag total: {len(collected)}"
+        )
 
         if len(rows) < PAGE_SIZE:
             print(f"    ✅  Last page.")
             break
 
-        start    += PAGE_SIZE
+        start += PAGE_SIZE
         page_num += 1
         await asyncio.sleep(CRAWL_DELAY)
 
@@ -461,6 +493,7 @@ async def collect_links_for_tag(page, tag: dict, seen_links: set) -> list:
 
 
 # ── Phase 2: Fetch Question Content ──────────────────────────────────────────
+
 
 async def fetch_all_content(page, rows: list) -> None:
     """
@@ -484,21 +517,32 @@ async def fetch_all_content(page, rows: list) -> None:
                 _fill_empty_content(row)
                 continue
 
-            html    = await page.content()
+            html = await page.content()
             content = parse_question_page(html)
 
             # Tags from the question page are more complete than search-result tags
             if content.get("Tags"):
-                row["Tags"]    = content["Tags"]
+                row["Tags"] = content["Tags"]
                 row["Tag IDs"] = content["Tag IDs"]
 
-            for field in ("Question Stem", "Question + Text", "A", "B", "C", "D", "E",
-                          "Answer", "Source"):
+            for field in (
+                "Question Stem",
+                "Question + Text",
+                "A",
+                "B",
+                "C",
+                "D",
+                "E",
+                "Answer",
+                "Source",
+            ):
                 row[field] = content.get(field, "")
 
             has_all_opts = all(row.get(l) for l in "ABCDE")
-            print(f"✓  Answer={row['Answer'] or '?'}  "
-                  f"Options={'ABCDE' if has_all_opts else 'partial'}")
+            print(
+                f"✓  Answer={row['Answer'] or '?'}  "
+                f"Options={'ABCDE' if has_all_opts else 'partial'}"
+            )
 
         except Exception as e:
             print(f"✗  {e}")
@@ -509,16 +553,26 @@ async def fetch_all_content(page, rows: list) -> None:
 
 def _fill_empty_content(row: dict) -> None:
     """Ensure all content fields exist in a row (used on fetch failure)."""
-    for field in ("Question Stem", "Question + Text", "A", "B", "C", "D", "E",
-                  "Answer", "Source"):
+    for field in (
+        "Question Stem",
+        "Question + Text",
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "Answer",
+        "Source",
+    ):
         row.setdefault(field, "")
 
 
 # ── Master Orchestrator ───────────────────────────────────────────────────────
 
+
 async def run_scraper(tags: list, output: str, session_file: str, fresh_login: bool):
-    all_rows    = []
-    seen_links  = set()
+    all_rows = []
+    seen_links = set()
     tag_buckets = {}
 
     async with async_playwright() as p:
@@ -531,7 +585,7 @@ async def run_scraper(tags: list, output: str, session_file: str, fresh_login: b
             ],
         )
         context = await browser.new_context()
-        page    = await context.new_page()
+        page = await context.new_page()
 
         # Stealth
         await page.add_init_script(
@@ -575,14 +629,16 @@ async def run_scraper(tags: list, output: str, session_file: str, fresh_login: b
 
 HEADER_FILL = PatternFill("solid", fgColor="1F4E79")
 HEADER_FONT = Font(bold=True, color="FFFFFF", size=11)
-ALT_FILL    = PatternFill("solid", fgColor="EBF3FB")
+ALT_FILL = PatternFill("solid", fgColor="EBF3FB")
 
 
 def _style_sheet(ws, df: pd.DataFrame):
     for cell in ws[1]:
-        cell.fill      = HEADER_FILL
-        cell.font      = HEADER_FONT
-        cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        cell.fill = HEADER_FILL
+        cell.font = HEADER_FONT
+        cell.alignment = Alignment(
+            horizontal="center", vertical="center", wrap_text=True
+        )
 
     link_col = None
     for idx, col_cell in enumerate(ws[1], start=1):
@@ -602,7 +658,7 @@ def _style_sheet(ws, df: pd.DataFrame):
 
     for col_cells in ws.columns:
         header = col_cells[0].value
-        width  = COL_WIDTHS.get(header, 18)
+        width = COL_WIDTHS.get(header, 18)
         ws.column_dimensions[col_cells[0].column_letter].width = width
 
     ws.row_dimensions[1].height = 28
@@ -612,11 +668,29 @@ def _style_sheet(ws, df: pd.DataFrame):
 def _build_df(rows: list, start_no: int = 1) -> pd.DataFrame:
     df = pd.DataFrame(rows)
     # Ensure every expected column exists
-    for col in COL_ORDER[1:]:   # skip "No" -- added below
+    for col in COL_ORDER[1:]:  # skip "No" -- added below
         if col not in df.columns:
             df[col] = ""
     df.insert(0, "No", range(start_no, start_no + len(df)))
     return df[COL_ORDER]
+
+
+def _sanitize_sheet_name(raw_name: str, existing_names: set[str]) -> str:
+    sanitized = re.sub(r"[:\\/?*\[\]]+", " ", raw_name.replace("Source: ", "")).strip()
+    if not sanitized:
+        sanitized = "Tag"
+    sanitized = sanitized[:31]
+
+    base_name = sanitized
+    idx = 1
+    while sanitized in existing_names:
+        suffix = f"_{idx}"
+        truncated = base_name[: 31 - len(suffix)]
+        sanitized = f"{truncated}{suffix}"
+        idx += 1
+
+    existing_names.add(sanitized)
+    return sanitized
 
 
 def save_excel(all_rows: list, tag_buckets: dict, path: str):
@@ -631,7 +705,9 @@ def save_excel(all_rows: list, tag_buckets: dict, path: str):
         for lbl, rows in tag_buckets.items()
         if rows
     ]
-    summary_rows.append({"Tag Label": "TOTAL (deduplicated)", "Question Count": len(all_rows)})
+    summary_rows.append(
+        {"Tag Label": "TOTAL (deduplicated)", "Question Count": len(all_rows)}
+    )
     summary_df = pd.DataFrame(summary_rows)
 
     with pd.ExcelWriter(path, engine="openpyxl") as writer:
@@ -646,10 +722,11 @@ def save_excel(all_rows: list, tag_buckets: dict, path: str):
         ws_sum.column_dimensions["A"].width = 30
         ws_sum.column_dimensions["B"].width = 18
 
+        existing_sheets = {"All Questions", "Summary"}
         for tag_label, rows in tag_buckets.items():
             if not rows:
                 continue
-            sheet_name = tag_label.replace("Source: ", "")[:31]
+            sheet_name = _sanitize_sheet_name(tag_label, existing_sheets)
             t_df = _build_df(rows)
             t_df.to_excel(writer, sheet_name=sheet_name, index=False)
             _style_sheet(writer.sheets[sheet_name], t_df)
@@ -661,18 +738,31 @@ def save_excel(all_rows: list, tag_buckets: dict, path: str):
 
 # ── CLI ───────────────────────────────────────────────────────────────────────
 
+
 def main():
     parser = argparse.ArgumentParser(
         description="Scrape GMAT Club CR x Source:OG questions (with login)"
     )
-    parser.add_argument("--tags-excel", default=TAGS_EXCEL,
-                        help=f"Path to gmatclub_tags.xlsx (default: {TAGS_EXCEL})")
-    parser.add_argument("--output", default=OUTPUT_EXCEL,
-                        help=f"Output Excel filename (default: {OUTPUT_EXCEL})")
-    parser.add_argument("--session", default=SESSION_FILE,
-                        help=f"Session cookie file (default: {SESSION_FILE})")
-    parser.add_argument("--fresh-login", action="store_true",
-                        help="Force re-login even if a saved session exists")
+    parser.add_argument(
+        "--tags-excel",
+        default=TAGS_EXCEL,
+        help=f"Path to gmatclub_tags.xlsx (default: {TAGS_EXCEL})",
+    )
+    parser.add_argument(
+        "--output",
+        default=OUTPUT_EXCEL,
+        help=f"Output Excel filename (default: {OUTPUT_EXCEL})",
+    )
+    parser.add_argument(
+        "--session",
+        default=SESSION_FILE,
+        help=f"Session cookie file (default: {SESSION_FILE})",
+    )
+    parser.add_argument(
+        "--fresh-login",
+        action="store_true",
+        help="Force re-login even if a saved session exists",
+    )
     args = parser.parse_args()
 
     tags_excel = args.tags_excel
@@ -681,7 +771,9 @@ def main():
         if alt.exists():
             tags_excel = str(alt)
         else:
-            sys.exit(f"Cannot find {tags_excel}. Make sure gmatclub_tags.xlsx is in the same folder.")
+            sys.exit(
+                f"Cannot find {tags_excel}. Make sure gmatclub_tags.xlsx is in the same folder."
+            )
 
     tags = load_cr_og_tags(tags_excel)
     if not tags:
@@ -692,6 +784,7 @@ def main():
 
     try:
         import nest_asyncio
+
         nest_asyncio.apply()
     except ImportError:
         pass
