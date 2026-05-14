@@ -96,8 +96,9 @@ COL_ORDER = [
     "Tag IDs",
     "Difficulty",
     "Source",
-    "Question Stem",
     "Question + Text",
+    "Passage",
+    "Question Stem",
     "A",
     "B",
     "C",
@@ -117,8 +118,9 @@ COL_WIDTHS = {
     "Tag IDs": 25,
     "Difficulty": 22,
     "Source": 35,
-    "Question Stem": 60,
     "Question + Text": 80,
+    "Passage": 80,
+    "Question Stem": 60,
     "A": 55,
     "B": 55,
     "C": 55,
@@ -166,7 +168,30 @@ def build_url(tag_id: int, start: int = 0) -> str:
 # ── Text Helpers ──────────────────────────────────────────────────────────────
 
 _ILLEGAL_CHARS = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f]")
-_OPT_RE = re.compile(r"^([A-E])[​  \t]+(.+)$")
+# Matches option lines: "(A) text", "A) text", "A. text", "A text" (with various spaces)
+_OPT_RE = re.compile(r"^\(?([A-E])[).​‏\xad\xa0​  \t]+(.+)$")
+
+# Noise markers — strip from first occurrence to end of text
+_NOISE_STOPS = [
+    "ID - CR",
+    "ID - DS",
+    "ID - SC",
+    "ID - RC",
+    "Need more similar questions?",
+    "Run a ",
+    "Show Answer",
+    "Show Tags",
+    "GMAT Club Forum Quiz",
+]
+
+
+def _strip_noise(text: str) -> str:
+    """Remove quiz prompts, ID labels, and other trailing noise."""
+    for stop in _NOISE_STOPS:
+        idx = text.find(stop)
+        if idx != -1:
+            text = text[:idx].rstrip()
+    return text
 
 
 def _clean(value):
@@ -307,8 +332,9 @@ def parse_question_page(html: str) -> dict:
 
     if not item_text:
         return {
-            "Question Stem": "",
             "Question + Text": "",
+            "Passage": "",
+            "Question Stem": "",
             "A": "",
             "B": "",
             "C": "",
@@ -328,6 +354,10 @@ def parse_question_page(html: str) -> dict:
         "div.twoRowsBlock",
         "div.post_signature",
         "div.answer-block",
+        "div[id^='spoiler_']",
+        "div.quiz-link",
+        "div.quizBlock",
+        "p.quiz-prompt",
         "script",
         "style",
     ):
@@ -338,7 +368,7 @@ def parse_question_page(html: str) -> dict:
         br.replace_with("\n")
 
     raw_text = item_text.get_text(separator="")
-    text = _clean_text(raw_text)
+    text = _strip_noise(_clean_text(raw_text))
 
     # ── Options A-E ───────────────────────────────────────────────────────────
     lines = [l.strip() for l in text.split("\n")]
@@ -390,8 +420,9 @@ def parse_question_page(html: str) -> dict:
         answer = extract_answer_letter(answer_detail)
 
     return {
-        "Question Stem": question_stem,
         "Question + Text": full_text,
+        "Passage": passage,
+        "Question Stem": question_stem,
         "A": options.get("A", ""),
         "B": options.get("B", ""),
         "C": options.get("C", ""),
@@ -499,9 +530,13 @@ async def login(page, session_file: str, fresh_login: bool = False) -> bool:
 # ── Phase 1: Collect Links per Tag ────────────────────────────────────────────
 
 
-async def collect_links_for_tag(page, tag: dict, seen_links: set) -> list:
+async def collect_links_for_tag(
+    page, tag: dict, seen_links: set, link_sources: dict
+) -> list:
     tag_id = tag["tag_id"]
     tag_label = tag["tag_label"]
+    # Strip "Source: " prefix for display in the Source column
+    source_label = tag_label.replace("Source: ", "").strip()
     collected = []
     start = 0
     page_num = 1
@@ -536,6 +571,12 @@ async def collect_links_for_tag(page, tag: dict, seen_links: set) -> list:
         if not rows:
             print(f"    ⚠️  Zero cards found -- stopping this tag.")
             break
+
+        # Track source label for every link on this page (including dupes)
+        for r in rows:
+            link = r["Link"]
+            if source_label not in link_sources.setdefault(link, []):
+                link_sources[link].append(source_label)
 
         new_rows = [r for r in rows if r["Link"] not in seen_links]
         seen_links.update(r["Link"] for r in new_rows)
@@ -591,16 +632,18 @@ async def fetch_all_content(
                 pass
 
             html = await _safe_page_content(page)
+            content = parse_question_page(html)
 
-            # Merge: question-page tags override search-card tags
+            # Merge: question-page tags override search-card tags;
+            # Source is set from Phase 1 tag collection — do not overwrite from website
             merged = {**row}
             for field in (
                 "Tags",
                 "Tag IDs",
                 "Difficulty",
-                "Source",
-                "Question Stem",
                 "Question + Text",
+                "Passage",
+                "Question Stem",
                 "A",
                 "B",
                 "C",
@@ -623,8 +666,9 @@ async def fetch_all_content(
 
         except Exception as e:
             print(f"✗  {e}")
-            row.setdefault("Question Stem", "")
             row.setdefault("Question + Text", "")
+            row.setdefault("Passage", "")
+            row.setdefault("Question Stem", "")
             for l in "ABCDE":
                 row.setdefault(l, "")
             row.setdefault("Answer", "")
@@ -701,6 +745,9 @@ def save_excel_results(results: list, path: str, tag_buckets: dict = None) -> No
     for col in COL_ORDER[1:]:  # skip "No"
         if col not in df.columns:
             df[col] = ""
+    # Drop "No" if already present (e.g. from auto-resumed existing data)
+    if "No" in df.columns:
+        df = df.drop(columns=["No"])
     df.insert(0, "No", range(1, len(df) + 1))
     df = df[COL_ORDER]
 
@@ -729,7 +776,7 @@ def save_excel_results(results: list, path: str, tag_buckets: dict = None) -> No
             for tag_label, t_rows in tag_buckets.items():
                 if not t_rows:
                     continue
-                sheet_name = tag_label.replace("Source: ", "")[:31]
+                sheet_name = re.sub(r'[:\\/?*\[\]]+', "-", tag_label.replace("Source: ", "")).strip()[:31]
                 t_df = _clean_df(pd.DataFrame(t_rows))
                 for col in COL_ORDER[1:]:
                     if col not in t_df.columns:
@@ -763,6 +810,7 @@ async def run_scraper(
     all_rows = []
     seen_links = set()
     tag_buckets = {}
+    link_sources: dict = {}  # {link: [source_label, ...]} — built during Phase 1
 
     async with async_playwright() as p:
         browser = await p.chromium.launch(
@@ -789,12 +837,16 @@ async def run_scraper(
         print(f"{'='*60}")
 
         for tag in tags:
-            rows = await collect_links_for_tag(page, tag, seen_links)
+            rows = await collect_links_for_tag(page, tag, seen_links, link_sources)
             tag_buckets[tag["tag_label"]] = rows
             all_rows.extend(rows)
             print(f"    📦  {tag['tag_label']}: {len(rows)} unique questions")
 
         print(f"\n  Total unique questions found: {len(all_rows)}")
+
+        # Stamp Source on every row from the Phase 1 tag collection
+        for row in all_rows:
+            row["Source"] = " | ".join(link_sources.get(row["Link"], []))
 
         # ── Auto-resume: skip already-done links ──────────────────────────────
         output_path_obj = Path(output)
