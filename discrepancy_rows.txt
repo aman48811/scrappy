@@ -1,0 +1,235 @@
+﻿=== No=96 (idx 95) ANS=C ===
+Q: Supply shortages and signs of growing demand are driving cocoa prices upward. Unusually severe weather in cocoa-producing regions�too much rain in Brazil and too little in West Africa�has limited production. Further, Europe and North America recently reported stronger demand for cocoa. In the first quarter, grinding of cocoa beans�the first stage in processing cocoa for chocolate�rose 8.1 percent in Europe and 16 percent in North America. Analysts have concluded that cocoa's price will continue to rise at least into the near future.
+
+Which of the following would, if true, most strengthen the reasoning above?
+
+A Ground cocoa beans can be stored for long periods before they spoil.
+B Several European and North American manufacturers that use cocoa have recently improved their processing capacity.
+C It takes new cocoa trees five or six years before they start bearing fruit.
+D Governments in Europe and North America are likely to change current restrictions on cocoa imports.
+E Historically, cocoa production has varied widely from year to year.
+A: Ground cocoa beans can be stored for long periods before they spoil.
+B: Several European and North American manufacturers that use cocoa have recently improved their processing capacity.
+C: It takes new cocoa trees five or six years before they start bearing fruit.
+D: Governments in Europe and North America are likely to change current restrictions on cocoa imports.
+E: Historically, cocoa production has varied widely from year to year.
+
+=== No=113 (idx 112) ANS=C ===
+Q: Astronomer: Most stars are born in groups of thousands, each star in a group forming from the same parent cloud of gas. Each cloud has a unique, homogeneous chemical composition. Therefore, whenever two stars have the same chemical composition as each other, they must have originated from the same cloud of gas.
+
+Which of the following, if true, would most strengthen the astronomer�s argument?
+
+A In some groups of stars, not every star originated from the same parent cloud of gas.
+B Clouds of gas of similar or identical chemical composition may be remote from each other.
+C Whenever a star forms, it inherits the chemical composition of its parent cloud of gas.
+D Many stars in vastly different parts of the universe are quite similar in their chemical compositions.
+E Astronomers can at least sometimes precisely determine whether a star has the same chemical composition as its parent cloud of gas.
+A: In some groups of stars, not every star originated from the same parent cloud of gas.
+B: Clouds of gas of similar or identical chemical composition may be remote from each other.
+C: Whenever a star forms, it inherits the chemical composition of its parent cloud of gas.
+D: Many stars in vastly different parts of the universe are quite similar in their chemical compositions.
+E: Astronomers can at least sometimes precisely determine whether a star has the same chemical composition as its parent cloud of gas.
+
+=== No=135 (idx 134) ANS=E ===
+Q: Although there is no record of poet Edmund Spenser's parentage, we do know that as a youth Spenser attended the Merchant Tailors' School in London for a period between 1560 and 1570. Records from this time indicate that the Merchant Tailors' Guild then had only three members named Spenser: Robert Spenser, listed as a gentleman; Nicholas Spenser, elected the Guild's Warden in 1568; and John Spenser, listed as a "journeyman cloth-maker." Of these, the last was likely the least affluent of the three�and most likely Edmund's father, since school accounting records list Edmund as a scholar who attended the school at a reduced fee.
+
+Which of the following is an assumption on which the argument depends?
+
+A Anybody in sixteenth century London who made clothing professionally would have had to be a member of the Merchant Tailors' Guild.
+B The fact that Edmund Spenser attended the Merchant Tailors' School did not necessarily mean that he planned to become a tailor.
+C No member of the Guild could become Guild warden in sixteenth century London unless he was a gentleman.
+D Most of those whose fathers were members of the Merchant Tailors' Guild were students at the Merchant Tailors' School.
+E The Merchant Tailors' School did not reduce its fees for the children of the more affluent Guild members.
+A: Anybody in sixteenth century London who made clothing professionally would have had to be a member of the Merchant Tailors' Guild.
+B: The fact that Edmund Spenser attended the Merchant Tailors' School did not necessarily mean that he planned to become a tailor.
+C: No member of the Guild could become Guild warden in sixteenth century London unless he was a gentleman.
+D: Most of those whose fathers were members of the Merchant Tailors' Guild were students at the Merchant Tailors' School.
+E: The Merchant Tailors' School did not reduce its fees for the children of the more affluent Guild members.
+
+=== No=168 (idx 167) ANS=D ===
+Q: Beginning in 1966 all new cars sold in Morodia were required to have safety belts and power steering. Previously, most cars in Morodia were without these features. Safety belts help to prevent injuries in collisions, and power steering helps to avoid collisions in the first place. But even though in 1966 one-seventh of the cars in Morodia were replaced with new cars, the number of car collisions and collision-related injuries did not decline.
+
+Which of the following, if true about Morodia, most helps to explain why the number of collisions and collision-related injuries in Morodia failed to decline in 1966?
+
+A Because of a driver-education campaign, most drivers and passengers in cars that did have safety belts used them in 1966.
+B Most of the new cars bought in 1966 were bought in the months of January and February.
+C In 1965, substantially more than one-seventh of the cars in Morodia were replaced with new cars.
+D An excessive reliance on the new safety features led many owners of new cars to drive less cautiously in 1966 than before.
+E The seat belts and power steering put into new cars sold in 1966 had to undergo strict quality-control inspections by manufacturers, whether the cars were manufactured in Morodia or not.
+A: Because of a driver-education campaign, most drivers and passengers in cars that did have safety belts used them in 1966.
+B: Most of the new cars bought in 1966 were bought in the months of January and February.
+C: In 1965, substantially more than one-seventh of the cars in Morodia were replaced with new cars.
+D: An excessive reliance on the new safety features led many owners of new cars to drive less cautiously in 1966 than before.
+E: The seat belts and power steering put into new cars sold in 1966 had to undergo strict quality-control inspections by manufacturers, whether the cars were manufactured in Morodia or not.
+
+=== No=246 (idx 245) ANS=D ===
+Q: The figure below shows what is known regarding the Spanish and French language abilities of applicants for a marketing job at C�est La Vie Advertising.
+
+During the application vetting process, the C�est La Vie hiring manager only records applicants who either do not speak French or do not speak either French or Spanish, as shown in the figure If a successful applicant must be fluent in both French and Spanish, choose from each drop-down menu the option that creates the most accurate statement based on the provided information.
+
+The maximum possible number of qualified applicants is Select13515. However, if the number of applicants speaking only French was 1/7 of those speaking only Spanish, the number of qualified applicants would be Select13515!
+
+Drill more questions
+
+that test the same idea in
+GMAT Club Timed Quiz ? Free.
+
+_________________
+A: 
+B: 
+C: 
+D: 
+E: 
+
+=== No=260 (idx 259) ANS= ===
+Q: When a user conducts a search of a certain library database, the database returns the results as a list of items (books, magazines, etc.) that match the search criteria. The user can select from two settings to establish a maximum number of items �either 12 or 24�to be displayed at a time. If the list contains more items than the established maximum, the list will be displayed on multiple pages, with each page (with the possible exception of the last page) containing the established maximum number of items, and with each item in the list appearing on exactly one of the pages. The maximum established by the user does not affect the total number of items listed. For the list of n items returned by a particular search of the database, the number of items, X, displayed on the last page when the established maximum is 12 is different from the number of items, Y, displayed on the last page when the established maximum is 24.
+
+Select for X and for Y values that are jointly consistent with the information provided. Make only two selections, one in each column.
+
+X
+
+Y
+
+1
+
+5
+
+7
+
+12
+
+17
+
+Drill more questions
+
+that test the same idea in
+GMAT Club Timed Quiz ? Free.
+
+_________________
+A: 
+B: 
+C: 
+D: 
+E: 
+
+=== No=278 (idx 277) ANS= ===
+Q: A business school located by Lake Michigan is planning to construct a new Infinity Hub to accommodate students enrolled in its MBA program. The administration has provided the following requirements to the architectural firm responsible for designing the building:
+A: business school located by Lake Michigan is planning to construct a new Infinity Hub to accommodate students enrolled in its MBA program. The administration has provided the following requirements to the architectural firm responsible for designing the building:
+B: 
+C: 
+D: 
+E: 
+
+=== No=279 (idx 278) ANS= ===
+Q: A business school located by Lake Michigan is planning to construct a new Infinity Hub to accommodate students enrolled in its MBA program. The administration has provided the following requirements to the architectural firm responsible for designing the building:
+A: business school located by Lake Michigan is planning to construct a new Infinity Hub to accommodate students enrolled in its MBA program. The administration has provided the following requirements to the architectural firm responsible for designing the building:
+B: 
+C: 
+D: 
+E: 
+
+=== No=280 (idx 279) ANS= ===
+Q: A business school located by Lake Michigan is planning to construct a new Infinity Hub to accommodate students enrolled in its MBA program. The administration has provided the following requirements to the architectural firm responsible for designing the building:
+A: business school located by Lake Michigan is planning to construct a new Infinity Hub to accommodate students enrolled in its MBA program. The administration has provided the following requirements to the architectural firm responsible for designing the building:
+B: 
+C: 
+D: 
+E: 
+
+=== No=333 (idx 332) ANS=C ===
+Q: The technological conservatism of bicycle manufacturers is a reflection of the kinds of demand they are trying to meet. The only cyclists seriously interested in innovation and willing to pay for it are bicycle racers. Therefore, innovation in bicycle technology is limited by what authorities will accept as standard for purposes of competition in bicycle races.
+
+Which of following is an assumption made in drawing the conclusion above?
+
+A The market for cheap, traditional bicycle cannot expand unless the market for high-performance competition bicycles expands.
+B High-performance bicycles are likely to be improved more as a result of technological innovations developed in small workshops than as a result of technological innovations developed in major manufacturing concerns.
+C Bicycle racers do not generate a strong demand for innovations that fall outside what is officially recognized as standard for purpose of competition.
+D The technology conservatism of bicycle manufacturers results primarily from their desire to manufacturer a product that can be sold without being altered to suit different national markets.
+E The authorities who set standards for high-performance bicycle racing do not keep informed about innovative bicycle design.
+A: The market for cheap, traditional bicycle cannot expand unless the market for high-performance competition bicycles expands.
+B: High-performance bicycles are likely to be improved more as a result of technological innovations developed in small workshops than as a result of technological innovations developed in major manufacturing concerns.
+C: Bicycle racers do not generate a strong demand for innovations that fall outside what is officially recognized as standard for purpose of competition.
+D: The technology conservatism of bicycle manufacturers results primarily from their desire to manufacturer a product that can be sold without being altered to suit different national markets.
+E: The authorities who set standards for high-performance bicycle racing do not keep informed about innovative bicycle design.
+
+=== No=351 (idx 350) ANS=E ===
+Q: The local board of education found that, because the current physics curriculum has little direct relevance to today�s world, physics classes attracted few high school students. So to attract students to physics classes, the board proposed a curriculum that emphasizes principles of physics involved in producing and analyzing visual images.
+
+Which of the following, if true, provides the strongest reason to expect that the proposed curriculum will be successful in attracting students?
+
+A Several of the fundamental principles of physics are involved in producing and analyzing visual images.
+B Knowledge of physics is becoming increasingly important in understanding the technology used in today�s world.
+C Equipment that a large producer of photographic equipment has donated to the high school could be used in the proposed curriculum.
+D The number of students interested in physics today is much lower than the number of students interested in physics 50 years ago.
+E In today�s world the production and analysis of visual images is of major importance in communications, business, and recreation.
+A: Several of the fundamental principles of physics are involved in producing and analyzing visual images.
+B: Knowledge of physics is becoming increasingly important in understanding the technology used in today�s world.
+C: Equipment that a large producer of photographic equipment has donated to the high school could be used in the proposed curriculum.
+D: The number of students interested in physics today is much lower than the number of students interested in physics 50 years ago.
+E: In today�s world the production and analysis of visual images is of major importance in communications, business, and recreation.
+
+=== No=388 (idx 387) ANS=E ===
+Q: In tests for pironoma, a serious disease, a false positive result indicates that people have pironoma when, in fact, they do not; a false negative result indicates that people do not have pironoma when, in fact, they do. To detect pironoma most accurately, physicians should use the laboratory test that has the lowest proportion of false positive results.
+
+Which of the following, if true, gives the most support to the recommendation above?
+
+A The accepted treatment for pironoma does not have damaging side effects.
+B The laboratory test that has the lowest proportion of false positive results causes the same minor side effects as do the other laboratory tests used to detect pironoma.
+C In treating pironoma patients, it is essential to begin treatment as early as possible, since even a week of delay can result in loss of life.
+D The proportion of inconclusive test results is equal for all laboratory tests used to detect pironoma.
+E All laboratory tests to detect pironoma have the same proportion of false negative results.
+A: The accepted treatment for pironoma does not have damaging side effects.
+B: The laboratory test that has the lowest proportion of false positive results causes the same minor side effects as do the other laboratory tests used to detect pironoma.
+C: In treating pironoma patients, it is essential to begin treatment as early as possible, since even a week of delay can result in loss of life.
+D: The proportion of inconclusive test results is equal for all laboratory tests used to detect pironoma.
+E: All laboratory tests to detect pironoma have the same proportion of false negative results.
+
+=== No=412 (idx 411) ANS=A ===
+Q: Two decades after the Emerald River Dam was built, none of the eight fish species native to the Emerald River was still reproducing adequately in the river below the dam. Since the dam reduced the annual range of water temperature in the river below the dam from 50 degrees to 6 degrees, scientists have hypothesized that sharply rising water temperatures must be involved in signaling the native species to begin the reproductive cycle.
+
+Which of the following statements, if true, would most strengthen the scientists� hypothesis?
+
+A The native fish species were still able to reproduce only in side streams of the river below the dam where the annual temperature range remains approximately 50 degrees.
+B Before the dam was built, the Emerald River annually overflowed its banks, creating backwaters that were critical breeding areas for the native species of fish.
+C The lowest recorded temperature of the Emerald River before the dam was built was 34 degrees, whereas the lowest recorded temperature of the river after the dam was built has been 43 degrees.
+D Nonnative species of fish, introduced into the Emerald River after the dam was built, have begun competing with the declining native fish species for food and space.
+E Five of the fish species native to the Emerald River are not native to any other river in North America.
+A: The native fish species were still able to reproduce only in side streams of the river below the dam where the annual temperature range remains approximately 50 degrees.
+B: Before the dam was built, the Emerald River annually overflowed its banks, creating backwaters that were critical breeding areas for the native species of fish.
+C: The lowest recorded temperature of the Emerald River before the dam was built was 34 degrees, whereas the lowest recorded temperature of the river after the dam was built has been 43 degrees.
+D: Nonnative species of fish, introduced into the Emerald River after the dam was built, have begun competing with the declining native fish species for food and space.
+E: Five of the fish species native to the Emerald River are not native to any other river in North America.
+
+=== No=431 (idx 430) ANS=C ===
+Q: Technological improvements and reduced equipment costs have made converting solar energy directly into electricity far more cost-efficient in the last decade. However, the threshold of economic viability for solar power (that is, the price per barrel to which oil would have to rise in order for new solar power plants to be more economical than new oil-fired power plants) is unchanged at thirty-five dollars.
+
+Which of the following, if true, does most to help explain why the increased cost-efficiency of solar power has not decreased its threshold of economic viability?
+
+A The cost of oil has fallen dramatically.
+B The reduction in the cost of solar-power equipment has occurred despite increased raw material costs for that equipment.
+C Technological changes have increased the efficiency of oil-fired power plants.
+D Most electricity is generated by coal-fired or nuclear, rather than oil-fired, power plants.
+E When the price of oil increases, reserves of oil not previously worth exploiting become economically viable.
+A: The cost of oil has fallen dramatically.
+B: The reduction in the cost of solar-power equipment has occurred despite increased raw material costs for that equipment.
+C: Technological changes have increased the efficiency of oil-fired power plants.
+D: Most electricity is generated by coal-fired or nuclear, rather than oil-fired, power plants.
+E: When the price of oil increases, reserves of oil not previously worth exploiting become economically viable.
+
+=== No=509 (idx 508) ANS=B ===
+Q: Half of the subjects in an experiment�the experimental group�consumed large quantities of a popular artificial sweetener. Afterward, this group showed lower cognitive abilities than did the other half of the subjects�the control group�who did not consume the sweetener. The detrimental effects were attributed to an amino acid that is one of the sweetener�s principal constituents.
+
+Which of the following, if true, would best help explain how the sweetener might produce the observed effect?
+
+A The government�s analysis of the artificial sweetener determined that it was sold in relatively pure form.
+B A high level of the amino acid in the blood inhibits the synthesis of a substance required for normal brain functioning.
+C Because the sweetener is used primarily as a food additive, adverse reactions to it are rarely noticed by consumers.
+D The amino acid that is a constituent of the sweetener is also sold separately as a dietary supplement.
+E Subjects in the experiment did not know whether they were consuming the sweetener or a second, harmless substance.
+A: The government�s analysis of the artificial sweetener determined that it was sold in relatively pure form.
+B: A high level of the amino acid in the blood inhibits the synthesis of a substance required for normal brain functioning.
+C: Because the sweetener is used primarily as a food additive, adverse reactions to it are rarely noticed by consumers.
+D: The amino acid that is a constituent of the sweetener is also sold separately as a dietary supplement.
+E: Subjects in the experiment did not know whether they were consuming the sweetener or a second, harmless substance.
+
+ 246, 260, 278, 279, 280

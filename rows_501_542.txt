@@ -1,0 +1,392 @@
+﻿=== ROW 501 (idx 500) ===
+Q: Many people argue that tobacco advertising plays a crucial role in causing teen-agers to start or continue smoking. In Norway, however, where there has been a ban on tobacco advertising since 1975, smoking is at least as prevalent among teen-agers as it is in countries that do not ban such advertisi
+A:Tobacco advertising cannot be the only factor that affects the prevalence of smoking among teenagers. B:Advertising does not play a role in causing teenagers to start or continue smoking. C:Banning tobacco advertising does not reduce the consumption of tobacco. D:More teen-agers smoke if they are not exposed to tobacco advertising than if they are. E:Most teen-agers who smoked in 1975 did not stop when the ban on tobacco advertising was implemented.
+ANS: A
+DETAIL: We are talking about the teenagers of today. Teenagers of 1975 would be adults now.
+Answer (A)�
+
+=== ROW 502 (idx 501) ===
+Q: Corporate officers and directors commonly buy and sell, for their own portfolios, stock in their own corporations. Generally, when the ratio of such inside sales to inside purchases falls below 2 to 1 for a given stock, a rise in stock prices is imminent. In recent days, while the price of MEGA Corp
+A:The imbalance between inside purchases and inside sales of MEGA stock will grow even further. B:Inside purchases of MEGA stock are about to cease abruptly. C:The price of MEGA stock will soon begin to go up. D:The price of MEGA stock will continue to drop, but less rapidly. E:The majority of MEGA stock will soon be owned by MEGA�s own officers and directors
+ANS: C
+DETAIL: (this seems quite likely because for the ratio to drop below 2, the denominator "inside purchases" has to increase relative to the numerator. this might send a signal to investors that the stock is healthy. Hence, the rise in stock prices)
+the argument tells us another fact -
+inside sales / inside purchases  = 1/9
+(<2).
+What inferences can we draw from this? Any answer option that suggests an increase in price would be the correct answer.
+A -
+Nowhere does the question mention or indicate that th
+
+=== ROW 503 (idx 502) ===
+Q: Which of the following best completes the passage below?
+
+Established companies concentrate on defending what they already have. Consequently, they tend not to be innovative themselves and tend to underestimate the effects of the innovations of others. The clearest example of this defensive strategy
+A:ballpoint pens and soft-tip markers have eliminated the traditional market for fountain pens, clearing the way for the marketing of fountain pens as luxury or prestige items B:a highly successful automobile was introduced by the same company that had earlier introduced a model that had been a dismal failure C:a once-successful manufacturer of slide rules reacted to the introduction of electronic calculators by trying to make better slide rules D:one of the first models of modern accounting machines, designed for use in the banking industry, was purchased by a public library as well as by banks E:the inventor of a commonly used anesthetic did not intend the product to be used by dentists, who currently account for almost the entire market for that drug
+ANS: C
+DETAIL: not innovative because they did not introduce new technologies but defended the old one.
+By doing this, they underestimated the effects of others innovations. Hence, they were no longer successful(point #3).
+Option D - Incorrect.
+does not address any of the three points.
+Option E - Incorrect.
+does not address any of the three points.
+
+=== ROW 504 (idx 503) ===
+Q: Passengers must exit airplanes swiftly after accidents, since gases released following accidents are toxic to humans and often explode soon after being released. In order to prevent passenger deaths from gas inhalation, safety officials recommend that passengers be provided with smoke hoods that pre
+A:Test evacuations showed that putting on the smoke hoods added considerably to the overall time it took passengers to leave the cabin. B:Some airlines are willing to buy the smoke hoods even though they consider them to be prohibitively expensive. C:Although the smoke hoods protect passengers from the toxic gases, they can do nothing to prevent the gases from igniting. D:Some experienced flyers fail to pay attention to the safety instructions given on every commercial flight before takeoff. E:In many airplane accidents, passengers who were able to reach emergency exits were overcome by toxic gases before they could exit the airplane.
+ANS: E
+DETAIL: 
+
+=== ROW 505 (idx 504) ===
+Q: When limitations were in effect on nuclear-arms testing, people tended to save more of their money, but when nuclear arms testing increased people tended to spend more of their money. The perceived threat of nuclear catastrophe, therefore, decreases the willingness of people to postpone consumption 
+A:the perceived threat of nuclear catastrophe has increased over the years B:most people supported the development of nuclear arms C:people�s perception of the threat of nuclear catastrophe depends on the amount of nuclear -arms testing being done D:the people who saved the most money when nuclear -arms testing was limited were the ones who supported such limitations E:there are more consumer goods available when nuclear-arms testing increases
+ANS: C
+DETAIL: I cannot think of a better way to bridge the gap between premise and argument, to be honest, and we know we have found our assumption in the process.
+Thank you for thinking to ask, and well done on the question.
+- Andrew
+I am no longer contributing to GMAT Club. Please request an active Expert or a peer review if you have questions.
+
+=== ROW 506 (idx 505) ===
+Q: A recent spate of launching and operating mishaps with television satellites led to a corresponding surge in claims against companies underwriting satellite insurance. As a result, insurance premiums shot up, making satellites more expensive to launch and operate. This, in turn, has added to the pre
+A:recent spate of launching and operating mishaps with television satellites led to a corresponding surge in claims against companies underwriting satellite insurance. As a result, insurance premiums shot up, making satellites more expensive to launch and operate. This, in turn, has added to the pressure to squeeze more performance out of currently operating satellites. B:When satellites reach orbit and then fail, the causes of failure are generally impossible to pinpoint with confidence. C:The greater the performance demands placed on satellites, the more frequently those satellites break down. D:Most satellites are produced in such small numbers that no economies of scale can be realized. E:Since many satellites are built by unwieldy international consortia, inefficiencies are inevitable.
+ANS: C
+DETAIL: The mishaps have already led to an increase in the cost of satellites. This has led to the current situation: 'pressure to squeeze more performance out of currently operating satellites.' Why would the costs go up even further? If squeezing more performance out of current satellites is likely to be lead to further increases in costs. Of the answer choices, B is irrelevant, A, D and E describe why satellites should be expensive, not why costs should increase. Only C describes why 'squeezing more 
+
+=== ROW 507 (idx 506) ===
+Q: Unlike the wholesale price of raw wool, the wholesale price of raw cotton has fallen considerably in the last year. Thus, although the retail price of cotton clothing at retail clothing stores has not yet fallen, it will inevitably fall.
+
+Which of the following, if true, most seriously weakens the a
+A:The cost of processing raw cotton for cloth has increased during the last year. B:The wholesale price of raw wool is typically higher than that of the same volume of raw cotton. C:The operating costs of the average retail clothing store have remained constant during the last year. D:Changes in retail prices always lag behind changes in wholesale prices. E:The cost of harvesting raw cotton has increased in the last year.
+ANS: A
+DETAIL: 
+
+=== ROW 508 (idx 507) ===
+Q: When three Everett-owned Lightning-built airplanes crashed in the same month, the Everett company ordered three new Lightning-built airplanes as replacements. This decision surprised many in the airline industry because, ordinarily when a product is involved in accidents, users become reluctant to b
+A:Although during the previous year only one Lightning-built airplane crashed, competing manufacturers had a perfect safety record. B:The Lightning-built airplanes crashed due to pilot error, but because of the excellent quality of the planes there were many survivors. C:The Federal Aviation Association issued new guidelines for airlines in order to standardize safety requirements governing preflight inspections. D:Consumer advocates pressured two major airlines into purchasing safer airplanes so that the public would be safer while flying. E:Many Lightning Airplane Company employees had to be replaced because they found jobs with the competition.
+ANS: B
+DETAIL: Yeah - you are heading down an unnecessary path.  The argument wants to know why the company is making a good decision by purchasing the same planes that crashed in the last year.  The focus in on the planes.  The correct answer suggests that the planes are worth purchasing again because the plane wasn't at fault and in fact the plane was responsible for protecting the lives of the passengers.  Stay focused on the key elements of the arguments - it's easy to get sidetracked.
+KW
+Kyle Widdison | M
+
+=== ROW 509 (idx 508) ===
+Q: Half of the subjects in an experiment�the experimental group�consumed large quantities of a popular artificial sweetener. Afterward, this group showed lower cognitive abilities than did the other half of the subjects�the control group�who did not consume the sweetener. The detrimental effects were a
+A:The government�s analysis of the artificial sweetener determined that it was sold in relatively pure form. B:A high level of the amino acid in the blood inhibits the synthesis of a substance required for normal brain functioning. C:Because the sweetener is used primarily as a food additive, adverse reactions to it are rarely noticed by consumers. D:The amino acid that is a constituent of the sweetener is also sold separately as a dietary supplement. E:Subjects in the experiment did not know whether they were consuming the sweetener or a second, harmless substance.
+ANS: B
+DETAIL: The second experiment sounds poorly designed, and tells us nothing about the conclusion in the first experiment.  This is incorrect.
+The only possible answer is
+(D)
+.
+Let me know if you have any questions.
+Mike
+Mike McGarry
+Magoosh Test Prep
+Education is not the filling of a pail, but the lighting of a fire. � William Butler Yeats (1865 � 1939)
+
+=== ROW 510 (idx 509) ===
+Q: If there is an oil-supply disruption resulting in higher international oil prices, domestic oil prices in open-market countries such as the United States will rise as well, whether such countries import all or none of their oil
+
+Which of the following conclusions is best supported by the statement a
+A:Domestic producers of oil in open-market countries are excluded from the international oil market when there is a disruption in the international oil supply. B:International oil-supply disruptions have little, if any, effect on the price of domestic oil as long as an open-market country has domestic supplies capable of meeting domestic demand. C:The oil market in an open-market country is actually part of the international oil market, even if most of that country�s domestic oil is usually sold to consumers within its borders. D:Open-market countries that export little or none of their oil can maintain stable domestic oil prices even when international oil prices rise sharply. E:If international oil prices rise, domestic distributors of oil in open-market countries will begin to import more oil than they export.
+ANS: C
+DETAIL: We cannot conclude this. We do not know what domestic distributors will do.
+Answer (C)�
+
+=== ROW 511 (idx 510) ===
+Q: A certain mayor has proposed a fee of five dollars per day on private vehicles entering the city, claiming that the fee will alleviate the city's traffic congestion. The mayor reasons that, since the fee will exceed the cost of round-trip bus fare from many nearby points, many people will switch fro
+A:certain mayor has proposed a fee of five dollars per day on private vehicles entering the city, claiming that the fee will alleviate the city's traffic congestion. The mayor reasons that, since the fee will exceed the cost of round-trip bus fare from many nearby points, many people will switch from using their cars to using the bus. B:The cost of parking fees already makes it considerable more expensive for most people to take a private vehicle into the city than to take a bus. C:Most of the people currently riding the bus do not own private vehicles. D:Many commuters opposing the mayor's plan have indicated that they would rather endure traffic congestion than pay a five dollar per day fee. E:During the average workday, private vehicles owned and operated by people living within the city account for twenty percent of the city's traffic congestion.
+ANS: B
+DETAIL: Obviously the mayor's plan will not affect the 20% who live in the city and drive their own vehicles. If this percentage were much higher, then (E) might demonstrate a flaw in the mayor's reasoning. But if only 20% fall into this category, then the fee will likely affect a large chunk of drivers from outside the city. If anything, this  actually
+supports
+the mayor's reasoning. Eliminate (E).
+(B) is the best answer.
+
+=== ROW 512 (idx 511) ===
+Q: In the past most airline companies minimized aircraft weight to minimize fuel costs. The safest airline seats were heavy, and airlines equipped their planes with few of these seats. This year the seat that has sold best to airlines has been the safest one - a clear indication that airlines are assig
+A:Last year's best-selling airline seat was not the safest airline seat on the market. B:No airline company has announced that it would be making safe seating a higher priority this year. C:The price of fuel was higher this year than it had been in most of the years when the safest airline seats sold poorly. D:Because of increases in the cost of materials, all airline seats were more expensive to manufacture this year than in any previous year. E:Because of technological innovations, the safest airline seat on the market this year weighed less than most other airline seats on the market.
+ANS: E
+DETAIL: Correct. If the "safest" seats were the lightest too, then perhaps the airlines bought them because they were lightest. This shows that perhaps the airlines are still focusing on the fuel cost only. This weakens our conclusion.
+Answer (E)
+
+=== ROW 513 (idx 512) ===
+Q: Certain messenger molecules fight damage to the lungs from noxious air by telling the muscle cells encircling the lungs� airways to contract. This partially seals off the lungs. An asthma attack occurs when the messenger molecules are activated unnecessarily, in response to harmless things like poll
+A:Researchers do not yet know how the body produces the messenger molecules that trigger asthma attacks. B:Researchers do not yet know what makes one person�s messenger molecules more easily activated than another�s. C:Such a medication would not become available for several years, because of long lead times in both development and manufacture. D:Such a medication would be unable to distinguish between messages triggered by pollen and household dust and messages triggered by noxious air. E:Such a medication would be a preventative only and would be unable to alleviate an asthma attack once it had started
+ANS: D
+DETAIL: There is no conclusion in the stimulus...it is all premises.  The "conclusion" in any plan of action is the objective of the plan, and the "premises" are the steps of the plan.  In this case, the conclusion would be to develop a medication that prevents asthma attacks, and the premises are the statements in the stimulus and that the medication would prevent the receipt of messages sent by the messenger molecules.
+Answer choice A is out of scope.  Knowing how the messages are formed is not releva
+
+=== ROW 514 (idx 513) ===
+Q: Traditionally, decision-making by managers that is reasoned step-by-step has been considered preferable to intuitive decision-making. However, a recent study found that top managers used intuition significantly more than did most middle- or lower-level managers. This confirms the alternative view th
+A:Methodical, step-by-step reasoning is inappropriate for making many real-life management decisions. B:Top managers have the ability to use either intuitive reasoning or methodical, step-by-step reasoning in making decisions. C:The decisions made by middle- and lower-level managers can be made as easily by using methodical reasoning as by using intuitive reasoning. D:Top managers use intuitive reasoning in making the majority of their decisions. E:Top managers are more effective at decision-making than middle- or lower-level managers.
+ANS: E
+DETAIL: If you go back to your premises/conclusion, we're trying to say that:
+Because top managers use more intuitive reasoning than methodical reasoning, it's a more effective way to make decisions.  Let's look at the negations to see which impact that conclusion:
+Choice E exposes that gap between the premise and the conclusion - if E were not true, as our negation shows, then it would show that the people who use intuitive reasoning more often are no more effective - and maybe even LESS effective - th
+
+=== ROW 515 (idx 514) ===
+Q: Useful protein drugs, such as insulin, must still be administered by the cumbersome procedure of injection under the skin. If proteins are taken orally, they are digested and cannot reach their target cells. Certain nonprotein drugs, however, contain chemical bonds that are not broken down by the di
+A:Coating insulin with compounds that are broken down by target cells, but whose chemical bonds are resistant to digestion B:Converting into protein compounds, by procedures that work in the laboratory, the nonprotein drugs that resist digestion C:Removing permanently from the digestive system any substances that digest proteins D:Determining, in a systematic way, what enzymes and bacteria are present in the normal digestive system and whether they tend to be broken down within the body E:Determining the amount of time each nonprotein drug takes to reach its target cells.
+ANS: A
+DETAIL: This might be interesting data, but it does not directly help protein drug users. Again, it's
+possible
+that this information might lead to a future medical advancement that somehow helps protein users, but this specific accomplishment does not help protein drug users. Eliminate (E).
+(A) is the best answer.
+
+=== ROW 516 (idx 515) ===
+Q: A report on acid rain concluded, �Most forests in Canada are not being damaged by acid rain.� Critics of the report insist the conclusion be changed to, �Most forests in Canada do not show visible symptoms of damage by acid rain, such as abnormal loss of leaves, slower rates of growth, or higher mor
+A:report on acid rain concluded, �Most forests in Canada are not being damaged by acid rain.� Critics of the report insist the conclusion be changed to, �Most forests in Canada do not show visible symptoms of damage by acid rain, such as abnormal loss of leaves, slower rates of growth, or higher mortality.� B:Acid rain could be causing damage for which symptoms have not yet become visible. C:The report does not compare acid rain damage to Canadian forests with acid rain damage to forests in other countries. D:All forests in Canada have received acid rain during the past fifteen years. E:The severity of damage by acid rain differs from forest to forest.
+ANS: B
+DETAIL: If person A says, "X does not exist here," and person B counters by saying, "it's hard to see the visible effects of X," then essentially, person B is telling A: "You're wrong; X is really happening, but you can't see it."  That is the crux of the the argument of the folks who want to change the conclusion of the report.
+Choice (B) is the answer choice that directly address this.
+Choice (A) = Not big news. The report said "
+Most
+forests . . . are not being damaged," which implies that: some, at 
+
+=== ROW 517 (idx 516) ===
+Q: A program instituted in a particular state allows parents to prepay their children�s future college tuition at current rates. The program then pays the tuition annually for the child at any of the state�s public colleges in which the child enrolls. Parents should participate in the program as a mean
+A:program instituted in a particular state allows parents to prepay their children�s future college tuition at current rates. The program then pays the tuition annually for the child at any of the state�s public colleges in which the child enrolls. Parents should participate in the program as a means of decreasing the cost for their children�s college education. B:The amount of money accumulated by putting the prepayment funds in an interest-bearing account today will be greater than the total cost of tuition for any of the public colleges when the child enrolls. C:The annual cost of tuition at the state�s pubic colleges is expected to increase at a faster rate than the annual increase in the cost of living. D:Some of the state�s public colleges are contemplating large increases in tuition next year. E:The prepayment plan would not cover the cost of room and board at any of the state�s public colleges.
+ANS: B
+DETAIL: of whether they use the prepayment plan. We are only interested in whether parents will save money on
+tuition
+by utilizing the prepayment plan.
+Because (E) doesn't change our evaluation of the prepayment plan, it is not an appropriate reason for parents to not participate. So we eliminate this choice and go for choice (B), which directly addresses how current prepayment funds could be better used to make college
+tuition
+more affordable in the future.
+I hope this helps!
+
+=== ROW 518 (idx 517) ===
+Q: A museum has been offered an undocumented statue, supposedly Greek and from sixth century B.C. Possibly the statue is genuine but undocumented because it was recently unearthed or because it has been privately owned. However, an ancient surface usually has uneven weathering, whereas the surface of t
+A:museum has been offered an undocumented statue, supposedly Greek and from sixth century B.C. Possibly the statue is genuine but undocumented because it was recently unearthed or because it has been privately owned. However, an ancient surface usually has uneven weathering, whereas the surface of this statue has the uniform quality characteristically produced by a chemical bath used by forgers to imitate a weathered surface. Therefore, the statue is probably a forgery. B:The subject�s pose and other aspects of the subject�s treatment exhibit all the most common features of Greek statues of the sixth century B.C. C:The chemical bath that forgers use was at one time used by dealers and collectors to remove the splotchy surface appearance of genuinely ancient sculptures. D:Museum officials believe that forgers have no technique that can convincingly simulate the patchy weathering characteristic of the surfaces of ancient sculptures. E:An allegedly Roman sculpture with a uniform surface similar to that of the statue being offered to the museum was recently shown to be a forgery.
+ANS: C
+DETAIL: PROBLEM: This strengthens the argument pretty straightforwardly.
+-t
+
+=== ROW 519 (idx 518) ===
+Q: Start-up companies financed by venture capitalist have a much lower failure rate than companies financed by other means. Source of financing, therefore, must be a more important causative factor in the success of a start-up company than are such factors as the personal characteristics of the entrepr
+A:Venture capitalists tend to be more responsive than other sources of financing to changes in a start-up company�s financial needs. B:The strategic planning of a start-up company is a less important factor in the long-term success of the company than are the personal characteristics of the entrepreneur. C:More than half of all new companies fall within five years. D:The management structures of start-up companies are generally less formal than the management structures of ongoing businesses. E:Venture capitalists base their decisions to fund start-up companies on such factors as the characteristics of the entrepreneur and quality of strategic planning of the company.
+ANS: E
+DETAIL: Choice (E) gives us some additional information. VCs base their funding decisions on factors such as 1) characteristics of the entrepreneur and 2) quality of strategic planning. This implies that the VCs are looking at those factors to try to determine which companies are
+likely
+to succeed.
+So those companies do NOT tend to succeed
+because
+they are financed by VCs. Rather, the VCs tend to finance companies that already ARE likely to succeed. The source of funding does not CAUSE the success. The 
+
+=== ROW 520 (idx 519) ===
+Q: An eyeglass manufacturer tried to boost sales for the summer quarter by offering its distributors a special discount if their orders for that quarter exceeded those for last year's summer quarter by at least 20 percent. Many distributors qualified for this discount. Even with much merchandise discou
+A:In general, a distributor's orders for the summer quarter are no higher than those for the spring quarter. B:Along with offering special discounts to qualifying distributors, the manufacturer increased newspaper and radio advertising in those distributors' sales areas. C:The distributors most likely to qualify for the manufacturer's special discount are those whose orders were unusually low a year earlier. D:The distributors who qualified for the manufacturer's special discount were free to decide how much of that discount to pass on to their own customers. E:The distributors' ordering more goods in the summer quarter left them overstocked for the fall quarter.
+ANS: E
+DETAIL: AprajitaG
+E- The distributors are overstocked for fall, but might choose to be even more overstocked. It might not necessarily result in failure of the plan.
+Choice (E) cuts to the heart of the business relationship: how much will the distributors decide to order from the manufacturer? Furthermore, (E) is the
+only
+choice that gives us a concrete reason why distributors
+would not increase their orders in the fall
+. If they have plenty of stock, then it follows logically that they won't need to or
+
+=== ROW 521 (idx 520) ===
+Q: Half of the subjects in an experiment�the experimental group�consumed large quantities of a popular artificial sweetener. Afterward, this group showed lower cognitive abilities than did the other half of the subjects�the control group�who did not consume the sweetener. The detrimental effects were a
+A:Most consumers of the sweetener do not consume as much of it as the experimental group members did. B:The amino acid referred to in the conclusion is a component of all proteins, some of which must be consumed for adequate nutrition. C:The quantity of the sweetener consumed by individuals in the experimental group is considered safe by federal food regulators. D:The two groups of subjects were evenly matched with regard to cognitive abilities prior to the experiment. E:A second experiment in which subjects consumed large quantities of the sweetener lacked a control group of subjects who were not given the sweetener.
+ANS: D
+DETAIL: You are correct in your assertion that D does not prove the conclusion to be true. But the question is not asking for something that proves the conclusion to be true - it merely asks for something that strengthens the conclusion. That is, something that makes the conclusion more likely to be true.
+D eliminates an alternative explanation for the evidence/premises. If the study had been poorly constructed, this would explain the resulting evidence, thus weakening the original conclusion (explanati
+
+=== ROW 522 (idx 521) ===
+Q: Some communities in Florida are populated almost exclusively by retired people and contain few, if any, families with small children. Yet these communities are home to thriving businesses specializing in the rental of furniture for infants and small children.
+
+Which of the following, if true, best r
+A:The businesses specializing in the rental of children�s furniture buy their furniture from distributors outside of Florida. B:The few children who do reside in these communities all know each other and often make overnight visits to one another�s houses. C:Many residents of these communities who move frequently prefer renting their furniture to buying it outright. D:Many residents of these communities must provide for the needs of visiting grandchildren several weeks a year. E:Children�s furniture available for rental is of the same quality as that available for sale in the stores
+ANS: D
+DETAIL: ,
+I can help with this one!
+Short answer:
+Nobody is charging the grandkids! They are children after all
+.
+Choice D actually talks about grandparents renting furniture from furniture-rental companies for those times when their grandchildren visit.
+Long answer:
+From what I see, it will be useful to discuss three aspects of this question in particular:
+1. What is the exact paradox here?
+2. Why is option B incorrect?
+3. Why is option D correct?
+Let�s keep it simple � let's
+visualize
+the information 
+
+=== ROW 523 (idx 522) ===
+Q: It is true that it is against international law to sell plutonium to countries that do not yet have nuclear weapons. But if United States companies do not do so, companies in other countries will.
+
+Which of the following is most like the argument above in its logical structure?
+
+A It is true that it
+A:It is true that it is against the police department�s policy to negotiate with kidnappers. But if the police want to prevent loss of life, they must negotiate in some cases. B:It is true that it is illegal to refuse to register for military service. But there is a long tradition in the United States of conscientious objection to serving in the armed forces. C:It is true that it is illegal for a government official to participate in a transaction in which there is an apparent conflict of interest. But if the facts are examined carefully, it will clearly be seen that there was no actual conflict of interest in the defendant�s case. D:It is true that it is against the law to burglarize people�s homes. But someone else certainly would have burglarized that house if the defendant had not done so first. E:It is true that company policy forbids supervisors to fire employees without two written warnings. But there have been many supervisors who have disobeyed this policy.
+ANS: D
+DETAIL: Reasoning structure: There is a policy in place. But, many people do not follow it.
+This structure is not similar to main argument�s.
+
+=== ROW 524 (idx 523) ===
+Q: A milepost on the towpath read "21" on the side facing the hiker as she approached it and "23" on its back. She reasoned that the next milepost forward on the path would indicate that she was halfway between one end of the path and the other. However, the milepost one mile further on read "20" facin
+A:milepost on the towpath read "21" on the side facing the hiker as she approached it and "23" on its back. She reasoned that the next milepost forward on the path would indicate that she was halfway between one end of the path and the other. However, the milepost one mile further on read "20" facing her and "24" behind. B:The numbers on the mileposts indicate kilometers, not miles. C:The facing numbers indicate miles to the end of the path, not miles from the beginning. D:A milepost was missing between the two the hiker encountered. E:The mileposts had originally been put in place for the use of mountain bikers, not for hikers.
+ANS: C
+DETAIL: 
+
+=== ROW 525 (idx 524) ===
+Q: Airline: Newly developed collision-avoidance systems, although not fully tested to discover potential malfunctions, must be installed immediately in passenger planes. Their mechanical warnings enable pilots to avoid crashes.
+
+Pilots: Pilots will not fly in planes with collision-avoidance systems tha
+A:It is always possible for mechanical devices to malfunction. B:Jet engines, although not fully tested when first put into use, have achieved exemplary performance and safety records. C:Although collision-avoidance systems will enable pilots to avoid some crashes, the likely malfunctions of the not-fully-tested systems will cause even more crashes. D:Many airline collisions are caused in part by the exhaustion of overworked pilots. E:Collision-avoidance systems, at this stage of development, appear to have worked better in passenger planes than in cargo planes during experimental flights made over a six-month period.
+ANS: C
+DETAIL: even more
+crashes.
+
+=== ROW 526 (idx 525) ===
+Q: Hardin argued that grazing land held in common (that is, open to any user) would always be used less carefully than private grazing land. Each rancher would be tempted to overuse common land because the benefits would accrue to the individuals, while the costs of reduced land quality that results fr
+A:Did any of the ranchers whose land was studied use both common and private land? B:Did the ranchers whose land was studied tend to prefer using common land over using private land for grazing? C:Was the private land that was studied of comparable quality to the common land before either was used for grazing? D:Were the users of the common land that was studied at least as prosperous as the users of the private land? E:Were there any owners of herds who used only common land, and no private land, for grazing?
+ANS: C
+DETAIL: Choice (C), on the other hand, will DEFINITELY help us evaluate the significance of the study. If, for example, the private land was in terrible shape prior to grazing while the common land was in great shape, then we could argue that the study does not necessarily go against Hardin's claim. On the other hand, if both private and common lands were in great shape prior to grazing, then we could argue that the study DOES go against Hardin's claim.
+The answer to the question posed in choice (C) -- 
+
+=== ROW 527 (idx 526) ===
+Q: One analyst predicts that Hong Kong can retain its capitalist ways after it becomes part of mainland China in 1997 as long as a capitalist Hong Kong is useful to China; that a capitalist Hong Kong will be useful to China as long as Hong Kong is prosperous; and that Hong Kong will remain prosperous a
+A:If Hong Kong fails to stay prosperous, it will no longer remain part of mainland China. B:If Hong Kong retains its capitalist ways until 1997, it will be allowed to do so afterward. C:If there is a world economic crisis after 1997, it will not adversely affect the economy of Hong Kong. D:Hong Kong will be prosperous after 1997 E:The citizens of Hong Kong will have no restrictions placed on them by the government of mainland China.
+ANS: B
+DETAIL: No data about this.
+Answer (B)
+
+=== ROW 528 (idx 527) ===
+Q: Under normal circumstances, the more competition in an industry, the lower the prices that consumers pay for that industry's products. But surgery patients in hospitals in the most competitive market are likely to pay more per hospital stay than are surgery patients in less competitive hospital mark
+A:The cost of living in the most competitive hospital markets is considerably higher than the national average B:Hospitals tend to respond to competition by buying expensive diagnostic equipment, the cost of which is passed on to patients. C:If given a choice, surgery patients avoid those hospitals whose cost containment strategies include such practices as refurbishing patients' rooms less frequently. D:Now that many simple surgeries can be performed safely in any qualified physician's office, most surgeries performed in hospitals are both serious and expensive. E:In the most competitive markets, physicians tend to keep postoperative patients in the hospital longer than do physicians in less competitive markets.
+ANS: D
+DETAIL: Answer (D)
+
+=== ROW 529 (idx 528) ===
+Q: Country Z's National Health-Care Program(NHCP) provides free health care to all citizens. In the last five years, NHCP has received increase funds, both in absolute terms and as a percent of country Z's gross national product. Yet the standard of health care in the country Z has decreased. Meanwhile
+A:Over the past five years, the percentage of the NHCP funds spent on actual health care has increased, while the percentage spent on the management of NHCP's program has decreased. B:Five years ago the standard of health care in the country Z was better than the standard of health care in other industrialized countries that have national health care programs. C:The average salaries of doctors and nurses in country Z are slightly higher than the average salaries of doctors and nurses in other industrialized countries that have national health care programs D:National Healthcare programs in other industrialized countries provide free medical care to resident aliens and tourists, as well as to citizens. E:Over the past five years, the increase in the absolute amount of funds received by NHCP has averaged approximately two percent above country Z's rate of inflation during that time period.
+ANS: A
+DETAIL: So this just says that we are receiving more money. This confirms that we are getting more cash, so while this supports a premise, it has nothing to do with our conclusion. Out.
+Similar question:
+My CR Guide:
+Here
+My RC Guide:
+Here
+My Legendary Debrief:
+Here
+Daagh's AWA Responses. Go:
+Here
+Want to know your Business School chances? Go:
+Here
+Want to be a moderator? We may want you to be one! See how:
+Here
+
+=== ROW 530 (idx 529) ===
+Q: Food aid if given to Ryana, a country that has a hunger emergency, will work to depress the price of food on the local market and drive local producers out of business.Therefore, Ryana will be left less able to provide food for its people.
+
+Which of the following, if true, is the strongest counter a
+A:Cash aid would be 25 to 40 percent more expensive to donor countries than food aid, since the donor government already hold food surpluses for which they are incurring storage costs. B:Because of weather conditions, local producers have produced much less food than they usually do. C:If the food donated to the government of Ryana is given away free to the people, the people will use the money they would have had to spend on food for other necessities, not for food. D:Since Ryan's food market is regulated, extra food will not depress the official price, and the government can use the cash it raises from selling donated food to help farmers. E:Many of Ryan's poorest children do not go to school, so many food aid given as free meals at school will be eaten by others who are already better fed than these children.
+ANS: D
+DETAIL: An answer just trying to pull at your heart, but this has nothing to do with our argument about farmers losing jobs and there being less food. Who cares which kids are getting the food? In this case, we do not.
+My CR Guide:
+Here
+My RC Guide:
+Here
+My Legendary Debrief:
+Here
+Daagh's AWA Responses. Go:
+Here
+Want to know your Business School chances? Go:
+Here
+Want to be a moderator? We may want you to be one! See how:
+Here
+
+=== ROW 531 (idx 530) ===
+Q: The following proposal to amend the bylaws of an organization was circulated to its members for comment. When more than one nominee is to be named for an office, prospective nominees must consent to nomination and before giving such consent must be told who the other nominees will be.
+
+Which of the 
+A:The proposal would make it possible for each of several nominees for an office to be aware of who all of the other nominees are. B:The proposal would widen the choice available to those choosing among the nominees. C:If there are several prospective nominees, the proposal would deny the last nominee equal treatment with the first. D:The proposal would enable a prospective nominee to withdraw from competition with a specific person without making that withdrawal known. E:If there is more than one prospective nominee, the proposal would make it impossible for anyone to become a nominee.
+ANS: E
+DETAIL: Answer (E)�
+
+=== ROW 532 (idx 531) ===
+Q: The average age of chief executive officers (CEO�s) in a large sample of companies is 57. The average age of CEO�s in those same companies 20 years ago was approximately eight years younger. On the basis of those data, it can be concluded that CEO�s in general tend to be older now.
+
+Which of the fol
+A:The dates when the CEO�s assumed their current positions have not been specified. B:No information is given concerning the average number of years that CEO�s remain in office. C:The information is based only on companies that have been operating for at least 20 years. D:Only approximate information is given concerning the average age of the CEO�s 20 years ago. E:Information concerning the exact number of companies in the sample has not been given.
+ANS: C
+DETAIL: Even if there are many such cases (the CEO has been the same for the last 20 yrs), it still doesn't weaken our conclusion. Our conclusion is that CEO�s in general tend to be older now. It doesn't matter why the CEOs are older now. The conclusion says that they are older and that's true even if the CEOs have grown old while on the CEO chair.
+On the other hand, option (C) says that the conclusion is being drawn on a sample of a particular type of companies. This means you cannot generalize whateve
+
+=== ROW 533 (idx 532) ===
+Q: Surveys show that every year only 10 percent of cigarette smokers switch brands. Yet the manufacturers have been spending an amount equal to 10 percent of their gross receipts on cigarette promotion in magazines. It follows from these figures that inducing cigarette smokers to switch brands did not 
+A:computing advertising costs as a percentage of gross receipts, not of overall costs B:past patterns of smoking and may not carry over to the future C:the assumption that each smoker is loyal to a single brand of cigarettes at any one time D:the assumption that each manufacturer produces only one brand of cigarettes E:figures for the cigarette industry as a whole and may not hold for a particular company
+ANS: E
+DETAIL: This says that though the "10% people" figure seems small industry wise, it may be a good number for a company.
+Say there are 5 brands (A, B, C..) with each having 20 loyalists for a total of 100 smokers. Say 10 of these 100 switch brands (from B, C, D and E) and come over to A. Now A has 30 loyalists. That is a 50% increase in its customer base. So the 10% marketing budget may have been worth it.
+Hence this is the criticism of the conclusion.
+Answer (E)�
+
+=== ROW 534 (idx 533) ===
+Q: The value of a product is determined by the ratio of its quality to its price. The higher the value of a product, the better will be its competitive position. Therefore, either increasing the quality or lowering the price of a given product will increase the likelihood that consumer will select that
+A:It is possible to increase both the quality and the price of a product without changing its competitive position. B:For certain segments of the population of consumers, higher-priced brands of some product lines are preferred to the lower-priced brands. C:Competing products often try to appeal to different segments of the population of consumers. D:The competitive position of a product can be affected by such factors as advertising and brand loyalty. E:Consumers� perceptions of the quality of a product are based on the actual quality of the product.
+ANS: E
+DETAIL: Correct. We are claiming that improving quality or reducing price will make people prefer the product. But what if consumer's perception of quality is based on price? What if lowering price makes people think that the product's quality is lower? For people to prefer the product, their perception of quality should be based on actual quality. Price is not ambiguous anyway. Then the increase in value will be perceived by the customers and they will prefer it.
+Answer (E)
+
+=== ROW 535 (idx 534) ===
+Q: In January there was a large drop in the number of new houses sold, because interest rates for mortgages were falling and many consumers were waiting to see how low the rates would go. This large sales drop was accompanied by a sharp rise in the average price of new houses sold.
+
+Which of the follow
+A:Sales of higher-priced houses were unaffected by the sales drop because their purchasers have fewer constraints limiting the total amount they pay. B:Labor agreements of builders with construction unions are not due to expire until the next January. C:The prices of new houses have been rising slowly over the past three years because there is an increasing shortage of housing. D:There was a greater amount of moderate-priced housing available for resale by owners during January than in the preceding three months. E:Interest rates for home mortgages are expected to rise sharply later in the year if predictions of increased business activity in general prove to be accurate
+ANS: A
+DETAIL: The key here is the term "average price of home."
+In answer choice (A) it gives us a concrete reason for why the average price of homes would increase: the number of expensive homes sold was higher than usual. Since the rest of the housing market - cheap homes to average priced homes - is not doing as well, the average price of homes sold is going to increase. Even if the number of expensive homes sold remained the same, the average price would still increase if the number of medium-priced homes
+
+=== ROW 536 (idx 535) ===
+Q: One state adds a 7 percent sales tax to the price of most products purchased within its jurisdiction. This tax, therefore, if viewed as tax on income, has the reverse effect of the federal income tax: the lower the income, the higher the annual percentage rate at which the income is taxed.
+
+The conc
+A:The amount of money citizens spend on products subject to the state tax tends to be equal across income levels. B:The federal income tax favors citizens with high incomes, whereas the state sales tax favors citizens with low incomes. C:Citizens with low annual incomes can afford to pay a relatively higher percentage of their incomes in state sales tax, since their federal income tax is relatively low. D:The lower a state�s sales tax, the more it will tend to redistribute income from the more affluent citizens to the rest of society. E:Citizens who fail to earn federally taxable income are also exempt from the state sales tax.
+ANS: A
+DETAIL: You want my suggestion,
+imSKR
+? Rather than get caught up in how to negate an answer choice, if it is not immediately clear to you, then just skip that answer choice and test the other answer choices instead. I have been outspoken from the beginning about my lack of fondness for the negation technique. It might work fine for others, but I prefer to engage with the answers directly to see if I can make the proper connection between what is presented in the passage and what the question is asking.
+
+=== ROW 537 (idx 536) ===
+Q: Surveys show that every year only 10 percent of cigarette smokers switch brands. Yet the manufacturers have been spending an amount equal to 10 percent of their gross receipts on cigarette promotion in magazines. It follows from these figures that inducing cigarette smokers to switch brands did not 
+A:Cigarette advertisements provide a major proportion of total advertising revenue for numerous magazines. B:Cigarette promotion serves to attract first-time smokers to replace those people who have stopped smoking. C:There exists no research conclusively demonstrating that increases in cigarette advertising are related to increases in smoking. D:Advertising is so firmly established as a major business activity of cigarette manufacturers that they would be unlikely to drop it. E:Brand loyalty is typically not very strong among those who smoke inexpensive cigarettes.
+ANS: B
+DETAIL: 
+
+=== ROW 538 (idx 537) ===
+Q: A researcher discovered that people who have low levels of immune-system activity tend to score much lower on tests of mental health than do people with normal or high immune-system activity. The researcher concluded from this experiment that the immune system protects against mental illness as well
+A:researcher discovered that people who have low levels of immune-system activity tend to score much lower on tests of mental health than do people with normal or high immune-system activity. The researcher concluded from this experiment that the immune system protects against mental illness as well as against physical disease. B:people's levels of immune-system activity are not affected by their use of medications C:a few people with high immune-system activity had scores on the test of mental health that were similar to the scores of people who had normal immune system activity D:people who have low immune-system activity tend to contract more viral infections than do people with normal or high immune-system activity E:high levels of stress first cause mental illness and then cause decreased immune-system activity in normal individuals
+ANS: E
+DETAIL: 
+
+=== ROW 539 (idx 538) ===
+Q: Blood banks will shortly start to screen all donors for NANB hepatitis. Although the new screening tests are estimated to disqualify up to 5 percent of all prospective blood donors, they will still miss two-thirds of donors carrying NANB hepatitis. Therefore, about 10 percent of actual donors will s
+A:Donors carrying NANB hepatitis do not, in a large percentage of cases, carry other infections for which reliable screening tests are routinely performed. B:Donors carrying NANB hepatitis do not, in a large percentage of cases, develop the disease themselves at any point. C:The estimate of the number of donors who would be disqualified by tests for NANB hepatitis is an underestimate. D:The incidence of NANB hepatitis is lower among the potential blood donors than it is in the population at large. E:The donors who will still supply NANB-contaminated blood will donate blood at the average frequency for all donors
+ANS: A
+DETAIL: We are talking about the donor numbers only, not the units donated and frequency of donation by each donor.
+Answer (A)�
+
+=== ROW 540 (idx 539) ===
+Q: Throughout the 1950�s, there were increases in the numbers of dead birds found in agricultural areas after pesticide sprayings. Pesticide manufacturers claimed that the publicity given to bird deaths stimulated volunteers to look for dead birds, and that the increase in numbers reported was attribut
+A:The publicity given to bird deaths was largely regional and never reached national proportions. B:Pesticide sprayings were timed to coincide with various phases of the life cycles of the insects they destroyed. C:No provision was made to ensure that a dead bird would not be reported by more than one observer. D:Initial increases in bird deaths had been noticed by agricultural workers long before any publicity had been given to the matter. E:Dead birds of the same species as those found in agricultural areas had been found along coastal areas where no farming took place.
+ANS: D
+DETAIL: This breaks the assumption that bird deaths haven't increases and also refutes the reasoning that the deaths were over represented through publicity.
+Option D is therefore the apt response.
+Hope that clarifies things!
+Peo - Academic Manager, CrackVerbal.
+
+=== ROW 541 (idx 540) ===
+Q: Meteorologists say that if only they could design an accurate mathematical model of the atmosphere with all its complexities, they could forecast the weather with real precision. But this is an idle boast, immune to any evaluation, for any inadequate weather forecast would obviously be blamed on imp
+A:Certain unusual configurations of data can serve as the basis for precise weather forecasts even though the exact causal mechanisms are not understood. B:Most significant gains in the accuracy of the relevant mathematical models are accompanied by clear gains in the precision of weather forecasts. C:Mathematical models of the meteorological aftermath of such catastrophic events as volcanic eruptions are beginning to be constructed. D:Modern weather forecasts for as much as a full day ahead are broadly correct about 80 percent of the time. E:Meteorologists readily concede that the accurate mathematical model they are talking about is not now in their power to construct.
+ANS: B
+DETAIL: Doesn't help us negate the author's position that we cannot evaluate the adequacy of the model. Not correct.
+Answer (B)�
+
+=== ROW 542 (idx 541) ===
+Q: Black Americans are, on the whole, about twice as likely as White Americans to develop high blood pressure. This likelihood also holds for westernized Black Africans when compared to White Africans. Researchers have hypothesized that this predisposition in westernized Blacks may reflect an interacti
+A:The blood pressures of those descended from peoples situated throughout their history in Senegal and Gambia, where salt was always available, are low. B:The unusually high salt consumption in certain areas of Africa represents a serious health problem. C:Because of their blood pressure levels, most White Africans have markedly decreased their salt consumption. D:Blood pressures are low among the Yoruba, who, throughout their history, have been situated far inland from sources of sea salt and far south of Saharan salt mines. E:No significant differences in salt metabolism have been found between those people who have had salt available throughout their history and those who have not.
+ANS: A
+DETAIL: PROBLEM: You could argue this has no effect (what do we care about salt metabolism?) or weakens, because it's breaking the link between history and blood pressure that the conclusion wants to make.
+-t
+
+

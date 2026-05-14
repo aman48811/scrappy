@@ -17,20 +17,39 @@ def extract_expert_answer(html):
             answer_detail = answer_detail_tag.get_text("\n", strip=True) if answer_detail_tag else ''
             return expert_name, answer_detail
     return 'no expert answer found', 'no expert answer found'
+
 import asyncio
 from playwright.async_api import async_playwright
 import pandas as pd
 import re
+import os
+import math
 
-URLS = [
-    "https://gmatclub.com/forum/if-today-the-price-of-an-item-is-3-600-what-was-the-price-of-the-ite-189749.html",
-    "https://gmatclub.com/forum/by-what-percent-has-the-price-of-an-overcoat-been-reduced-189750.html",
-    "https://gmatclub.com/forum/if-the-longfellow-playground-is-rectangular-what-is-its-width-189751.html",
-    "https://gmatclub.com/forum/what-is-the-value-of-x-1-1-x-1-3-2-x-399547.html",
-    "https://gmatclub.com/forum/is-william-taller-than-jane-1-william-is-taller-than-anna-2-anna-189752.html",
-]
 
-OUTPUT_FILE = "gmatclub_clean.xlsx"
+# Batch config
+BATCH_SIZE = 50
+INPUT_EXCEL = "1000-DS-GMAT-Club.xlsx"
+INPUT_EXCEL_PATH = os.path.join(os.path.dirname(__file__), INPUT_EXCEL)
+
+# Helper to get next batch of valid links
+def get_next_batch(batch_num=1):
+    df = pd.read_excel(INPUT_EXCEL_PATH)
+    # Assume columns: A=Index, B=Link, C=Source1, D=Source2, E=ID
+    valid_rows = []
+    for idx, row in df.iterrows():
+        link = str(row[1]).strip()
+        if link.startswith("http://") or link.startswith("https://"):
+            valid_rows.append({
+                "link": link,
+                "source1": row[2] if len(row) > 2 else '',
+                "source2": row[3] if len(row) > 3 else '',
+                "id": row[4] if len(row) > 4 else '',
+            })
+    total_batches = math.ceil(len(valid_rows) / BATCH_SIZE)
+    start = (batch_num - 1) * BATCH_SIZE
+    end = start + BATCH_SIZE
+    batch = valid_rows[start:end]
+    return batch, total_batches
 
 
 # 🔥 Clean text (remove junk after Show Answer)
@@ -64,6 +83,13 @@ def extract_statements(text):
 
 
 async def main():
+    # Determine batch number from output files
+    batch_num = 1
+    while os.path.exists(f"gmatclub_batch_{batch_num}.xlsx"):
+        batch_num += 1
+    batch, total_batches = get_next_batch(batch_num)
+    print(f"Processing batch {batch_num} of {total_batches} ({len(batch)} links)")
+
     results = []
 
     async with async_playwright() as p:
@@ -85,9 +111,9 @@ async def main():
         })
         """)
 
-
-        for i, url in enumerate(URLS, 1):
-            print(f"\n[{i}/{len(URLS)}] Opening...")
+        for i, row in enumerate(batch, 1):
+            url = row["link"]
+            print(f"\n[{i}/{len(batch)}] Opening... {url}")
 
             try:
                 await page.goto(url, timeout=60000)
@@ -137,7 +163,6 @@ async def main():
                 cleaned = "Failed"
                 s1, s2 = "", ""
 
-
             question_stem = extract_question_stem(cleaned)
 
             # Get page HTML for expert answer extraction
@@ -146,7 +171,10 @@ async def main():
 
             results.append({
                 "No": i,
-                "URL": url,
+                "ID": row["id"],
+                "Source 1": row["source1"],
+                "Source 2": row["source2"],
+                "Link": url,
                 "Question + Text": cleaned,
                 "question-stem": question_stem,
                 "Statement 1": s1,
@@ -159,10 +187,12 @@ async def main():
 
         await browser.close()
 
-    df = pd.DataFrame(results)
-    df.to_excel(OUTPUT_FILE, index=False)
 
-    print("\n✅ Saved:", OUTPUT_FILE)
+    # Save batch output
+    output_file = f"gmatclub_batch_{batch_num}.xlsx"
+    df = pd.DataFrame(results)
+    df.to_excel(output_file, index=False)
+    print(f"\n✅ Saved batch {batch_num} to {output_file}")
 
 
 # Run

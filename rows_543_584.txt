@@ -1,0 +1,358 @@
+﻿=== ROW 543 (idx 542) ===
+Q: Statement of a United States copper mining company: Import quotas should be imposed on the less expensive copper mined outside the country to maintain the price of copper in this country; otherwise, our companies will not be able to stay in business.
+
+Response of a United States copper wire manufact
+A:is self-serving and irrelevant to the proposal of the mining company B:is circular, presupposing what it seeks to prove about the proposal of the mining company C:shows that the proposal of the mining company would have a negative effect on the mining company�s own business D:fails to give a reason why the proposal of the mining company should not be put into effect to alleviate the concern of the mining company for staying in business E:establishes that even the mining company�s business will prosper if the mining company�s proposal is rejected
+ANS: C
+DETAIL: It talks about how mining company's business will be harmed if the proposal is accepted. It does not say that their business will prosper if the proposal is rejected. The business may still not "prosper" if the proposal is rejected.
+Answer (C)�
+
+=== ROW 544 (idx 543) ===
+Q: Continuous indoor fluorescent light benefits the health of hamsters with inherited heart disease. A group of them exposed to continuous fluorescent light survived twenty-five percent longer than a similar group exposed instead to equal periods of indoor fluorescent light and of darkness.
+
+The method
+A:Can industrial workers who need to see their work do so better by sunlight or by fluorescent light? B:Can hospital lighting be improved to promote the recovery of patients? C:How do deep-sea fish survive in total darkness? D:What are the inherited illnesses to which hamsters are subject? E:Are there plants that require specific periods of darkness in order to bloom?
+ANS: B
+DETAIL: "  Well, apart from any context, any of the science concerning healing in hamsters, the bare-bones research method of 24hr light vs. (1/2 light, 1/2 dark) would probably be exactly what you would have to use to test the hypothesis about plants needing light to bloom.  I can see whoever wrote the question did not intend for this to be the answer, but whoever wrote the question did not do a particularly good job with diction, especially in that final prompt question.  Technically, "method of resea
+
+=== ROW 545 (idx 544) ===
+Q: Sales campaigns aimed at the faltering personal computer market have strongly emphasized ease of use, called user-friendliness. This emphasis is oddly premature and irrelevant in the eyes of most potential buyers, who are trying to address the logically prior issue of whether______
+
+A user-friendlin
+A:user-friendliness also implies that owners can service their own computers B:personal computers cost more the more user-friendly they are C:currently available models are user-friendly enough to suit them D:the people promoting personal computers use them in their own homes E:they have enough sensible uses for a personal computer to justify the expense of buying one
+ANS: E
+DETAIL: user-friendly enough
+to suit them
+I should sound like a broken record by now. We should not be focusing on user-friendliness, since we cannot argue with information presented in the passage. Sure, we can call a conclusion wayward and offer reasons why in a
+weaken
+question, but here, the task is to provide
+support
+for the given argument. (C) is a reasonable real-world consideration, but a trap is a trap, and you have to watch the passage carefully to avoid falling into one. Moreover, I am not sur
+
+=== ROW 546 (idx 545) ===
+Q: People tend to estimate the likelihood of an event�s occurrence according to its salience; that is, according to how strongly and how often it comes to their attention.By placement and headlines, newspapers emphasize stories about local crime over stories about crime elsewhere and about many other m
+A:The language used in newspaper headlines about local crime is inflammatory and fails to respect the rights of suspects. B:The coverage of international events in newspapers is neglected in favor of the coverage of local events. C:Readers of local news in newspapers tend to overestimate the amount of crime in their own localities relative to the amount of crime in other places. D:None of the events concerning other people that are reported in newspapers is so salient in people�s minds as their own personal experiences. E:The press is the news medium that focuses people�s attention most strongly on local crimes.
+ANS: C
+DETAIL: We don't know about other mediums. Newspapers are given just as an example.
+Answer (C)�
+
+=== ROW 547 (idx 546) ===
+Q: To entice customers away from competitors, Red Label supermarkets have begun offering discounts on home appliances to customers who spend $50 or more on any shopping trip to Red Label. Red Label executives claim that the discount program has been a huge success, since cash register receipts of $50 o
+A:Most people who switched to Red Label after the program began spend more than $50 each time they shop at Red Label. B:Most people whose average grocery bill is less than $50 would not be persuaded to spend more by any discount program. C:Most people who received discounts on home appliances through Red Label�s program will shop at Red Label after the program ends. D:Since the beginning of the discount program, most of the people who spend $50 or more at Red Label are people who have never before shopped there and whose average grocery bill has always been higher than $50. E:Almost all of the people who have begun spending $50 or more at Red Label since the discount program began are longtime customers who have increased the average amount of their shopping bills by making fewer trips.
+ANS: E
+DETAIL: This weakens the claim. So most people who averaged $50 or more were old customers. They used to shop every week at Red label and total say $30 per week. Now, they shop once every 2 weeks and total $60 per trip. So that is why the >$50 receipts have increased.
+So this shows that the program may not be a success.
+Answer (E)�
+
+=== ROW 548 (idx 547) ===
+Q: Y has been believed to cause Z. A new report, noting that Y and Z are often observed to be preceded by X, suggests that X, not Y, may be the cause of Z.
+
+Which of the following further observations would best support the new report�s suggestion?
+
+A In cases where X occurs but Y does not, X is usuall
+A:In cases where X occurs but Y does not, X is usually followed by Z. B:In cases where X occurs, followed by Y, Y is usually followed by Z. C:In cases where Y occurs but X does not, Y is usually followed by Z. D:In cases where Y occurs but Z does not, Y is usually preceded by X. E:In cases where Z occurs, it is usually preceded by X and Y.
+ANS: A
+DETAIL: Here either X or Y could cause Z. No conclusion.
+Answer (A)�
+
+=== ROW 549 (idx 548) ===
+Q: Meteorologists say that if only they could design an accurate mathematical model of the atmosphere with all its complexities, they could forecast the weather with real precision. But this is an idle boast, immune to any evaluation, for any inadequate weather forecast would obviously be blamed on imp
+A:The amount of energy that the Earth receives from the Sun is monitored closely and is known not to be constant. B:Volcanic eruptions, the combustion of fossil fuels, and several other processes that also cannot be quantified with any accuracy are known to have a significant and continuing impact on the constitution of the atmosphere. C:As current models of the atmosphere are improved, even small increments in complexity will mean large increases in the number of computers required for the representation of the models. D:Frequent and accurate data about the atmosphere collected at a large number of points both on and above the ground are a prerequisite for the construction of a good model of the atmosphere. E:With existing models of the atmosphere, large scale weather patterns can be predicted with greater accuracy than can relatively local weather patterns.
+ANS: B
+DETAIL: Existing models are not our concern here. So this option is out too.
+
+=== ROW 550 (idx 549) ===
+Q: Six months or so after getting a video recorder, many early buyers apparently lost interest in obtaining videos to watch on it. The trade of businesses selling and renting videos is still buoyant, because the number of homes with video recorders is still growing. But clearly, once the market for vid
+A:The market for video recorders would not be considered saturated until there was one in 80 percent of homes. B:Among the items handled by video distributors are many films specifically produced as video features. C:Few of the early buyers of video recorders raised any complaints about performance aspects of the new product. D:The early buyers of a novel product are always people who are quick to acquire novelties, but also often as quick to tire of them. E:In a shrinking market, competition always intensifies and marginal businesses fail
+ANS: D
+DETAIL: NOTE: that's a really specific group of people who lost interest.  It's not "most buyers"...it's most EARLY buyers.  And then we draw a big general conclusion about the whole industry based on that really specific group.
+Choice (D) gives a reason for why that particular group isn't necessarily representative of the whole: if early buyers are heavily predisposed to quickly tiring of whatever new product they purchase, then we can't necessarily extrapolate their disinterest to "everyone."  Early a
+
+=== ROW 551 (idx 550) ===
+Q: Reviewing historical data, medical researchers in California found that counties with the largest number of television sets per capita have had the lowest incidence of a serious brain disease, mosquito-borne encephalitis. The researchers have concluded that people in these counties stay indoors more
+A:Programs designed to control the size of disease-bearing mosquito populations have not affected the incidence of mosquito borne encephalitis. B:The occupations of county residents affect their risk of exposure to mosquito-borne encephalitis more than does television-watching. C:The incidence of mosquito-borne encephalitis in counties with the largest number of television sets per capita is likely to decrease even further. D:The more time people in a county spend outdoors, the greater their awareness of the dangers of mosquito-borne encephalitis. E:The more television sets there are per capita in a county, the more time the average county resident spends watching television.
+ANS: E
+DETAIL: This tells us that more TVs actually does mean more TV watching hours. Well, then it makes sense that they stay more indoors and hence reduce the incidence of mosquito bites. It strengthens our conclusion.
+Answer (E)�
+
+=== ROW 552 (idx 551) ===
+Q: This year the New Hampshire Division of Company X, set a new record for annual sales by that division. This record is especially surprising since the New Hampshire Division has the smallest potential market and the lowest sales of any of Company X's divisions.
+
+Which of the following identifies a fl
+A:If overall sales for Company X were sharply reduced, the New Hampshire Division's new sales record is irrelevant to the company's prosperity. B:Since the division is competing against its own record, the comparison of its sales record with that of other divisions is irrelevant. C:If this is the first year that the New Hampshire Division has been last in sales among Company X's divisions, the new record is not surprising at all. D:If overall sales for Company X were greater than usual, it is not surprising that the New Hampshire Division was last in sales. E:Since the New Hampshire Division has the smallest potential market, it is not surprising that it had the lowest sales.
+ANS: B
+DETAIL: by that division
+.
+This should signal that what's really important here isn't "New Hampshire set a record" but that it's a very specific record...it's not a global record, company record, etc. - it's a record for that particular branch.  For this reason, it doesn't matter whether it's the smallest or largest branch in the company...we're only comparing New Hampshire to itself.  So the fact that it's smaller than the other branches doesn't make "it set its own individual branch record" surprising
+
+=== ROW 553 (idx 552) ===
+Q: Of the countries that were the world�s twenty largest exporters in 1953, four had the same share of total world exports in 1984 as in 1953. Theses countries can therefore serve as models for those countries that wish to keep their share of the global export trade stable over the years.
+
+Which of the
+A:Many countries wish to increase their share of world export trade, not just keep it stable. B:Many countries are less concerned with exports alone than with the balance between exports and imports. C:With respect to the mix of products each exports, the four countries are very different from each other. D:Of the four countries, two had a much larger, and two had a much smaller, share of total world exports in 1970 than in 1984. E:The exports of the four countries range from 15 percent to 75 percent of the total national output.
+ANS: D
+DETAIL: Correct Option: D
+
+=== ROW 554 (idx 553) ===
+Q: By analyzing the garbage of a large number of average-sized households, a group of modern urban anthropologists has found that a household discards less food the more standardized- made up of canned and prepackaged foods-its diet is. The more standardized a household�s diet is, however, the greater 
+A:An increasing number of households rely on a highly standardized diet. B:The less standardized a household�s diet is, the more nonfood waste the household discards. C:The less standardized a household�s diet is, the smaller is the proportion of fresh produce in the household�s food waste. D:The less standardized a household�s diet is, the more canned and prepackaged foods the household discards as waste. E:The more fresh produce a household buys, the more fresh produce it throws away.
+ANS: C
+DETAIL: 
+
+=== ROW 555 (idx 554) ===
+Q: Lark Manufacturing Company initiated a voluntary Quality Circles program for machine operators. Independent surveys of employee attitudes indicated that the machine operators participating in the program were less satisfied with their work situations after two years of the program�s existence than t
+A:The second survey occurred during a period of recession when rumors of cutbacks and layoffs at Lark Manufacturing were plentiful. B:The surveys also showed that those Lark machine operators who neither participated in Quality Circles nor knew anyone who did so reported the same degree of lessened satisfaction with their work situations as did the Lark machine operators who participated in Quality Circles. C:While participating in Quality Circles at Lark Manufacturing, machine operators exhibited two of the primary indicators of improved job satisfaction: increased productivity and decreased absenteeism. D:Several workers at Lark Manufacturing who had participated in Quality Circles while employed at other companies reported that, while participating in Quality Circles in their previous companies, their work satisfaction had increased. E:The machine operators who participated in Quality Circles reported that, when the program started, they felt that participation might improve their work situations.
+ANS: E
+DETAIL: It's irrelevant whether these workers were less satisfied
+before
+joining the Quality Circles, because we're concerned with what happened
+as a result
+of their participation in the Quality Circles. And choice (E) tells us nothing about whether these machine operators actually experienced increased or decreased job satisfaction BECAUSE of their participation in Quality Circles.
+Additionally, there's no information in choice (E) that shows us how workers felt about their jobs prior to the start of t
+
+=== ROW 556 (idx 555) ===
+Q: The city�s public transportation system should be removed from the jurisdiction of the municipal government, which finds it politically impossible either to raise fares or to institute cost-saving reductions in service. If public transportation were handled by a private firm, profits would be vigoro
+A:the private firms that would handle public transportation would have experience in the transportation industry B:political considerations would not prevent private firms from ensuring that revenues cover operating costs C:private firms would receive government funding if it were needed to cover operating costs D:the public would approve the cost-cutting actions taken by the private firm E:the municipal government would not be resigned to accumulating merely enough income to cover costs
+ANS: B
+DETAIL: This is irrelevant because we are considering the scenario of private firms operating the transportation, not the municipal government. Eliminate.
+
+=== ROW 557 (idx 556) ===
+Q: Lists of hospitals have been compiled showing which hospitals have patient death rates exceeding the national average. The data have been adjusted to allow for differences in the ages of patients.
+
+Each of the following, if true, provides a good logical ground for hospitals to object to interpreting
+A:Rank order might indicate insignificant differences, rather than large differences, in numbers of patient deaths. B:Hospitals that keep patients longer are likely to have higher death rates than those that discharge patients earlier but do not record deaths of patients at home after discharge. C:Patients who are very old on admission to a hospital are less likely than younger patients to survive the same types of illnesses or surgical procedures. D:Some hospitals serve a larger proportion of low-income patients, who tend to be more seriously ill when admitted to a hospital. E:For-profit hospitals sometimes do not provide intensive-care units and other expensive services for very sick patients but refer or transfer such patients to other hospitals.
+ANS: C
+DETAIL: Some hospitals do not provide services to very sick patients but refer them to other (perhaps specialised) hospitals. The death rate in these hospitals will be lower than the death rate in other hospitals. If they treat only the easily treatable cases, they are bound to have better standing in death rates. Hence (E) is a valid concern against the lists too.
+Answer (C)�
+
+=== ROW 558 (idx 557) ===
+Q: Teenagers are often priced out of the labor market by the government-mandated minimum-wage level because employers cannot afford to pay that much for extra help. Therefore, if Congress institutes a subminimum wage, a new lower legal wage for teenagers, the teenage unemployment rate, which has been r
+A:Since 1960 the teenage unemployment rate has risen when the minimum wage has risen. B:Since 1960 the teenage unemployment rate has risen even when the minimum wage remained constant. C:Employers often hire extra help during holiday and warm weather seasons. D:The teenage unemployment rate rose more quickly in the 1970's than it did in the 1960's. E:The teenage unemployment rate has occasionally declined in the years since 1960.
+ANS: B
+DETAIL: When the employers hire extra help is immaterial. Point is, they have been hiring lesser extra help. The argument links amount of extra help with minimum wages.
+
+=== ROW 559 (idx 558) ===
+Q: Teresa: Manned spaceflight does not have a future, since it cannot compete economically with other means of accomplishing the objectives of spaceflight.
+
+Edward: No mode of human transportation has a better record of reliability: two accidents in twenty-five years. Thus manned spaceflight definitely
+A:It cites evidence that, if true, tends to disprove the evidence cited by Teresa in drawing her conclusion. B:It indicates a logical gap in the support that Teresa offers for her conclusion. C:It raises a consideration that outweighs the argument Teresa makes. D:It does not meet Teresa's point because it assumes that there is no serious impediment to transporting people into space, but this was the issue raised by Teresa. E:It fails to respond to Teresa's argument because it does not address the fundamental issue of whether space activities should have priority over other claims on the national budget.
+ANS: D
+DETAIL: . I am glad you found an official question I had not seen before, and a challenging one at that. I am attaching a screenshot of my breakdown of the question, with an analysis to follow.
+Attachment:
+Screen Shot 2021-10-01 at 10.13.44.png [ 122.52 KiB | Viewed 26305 times ]
+First off, notice that I spent 2:12 before I committed to an answer. I felt good about it in the moment�I could not think of a way to disprove it�so I went with it. Was I worried about going over on time? Not at all. I would mu
+
+=== ROW 560 (idx 559) ===
+Q: Advertiser: The revenue that newspapers and magazines earn by publishing advertisements allows publishers to keep the prices per copy of their publications much lower than would otherwise be possible. Therefore, consumers benefit economically from advertising.
+Consumer: But who pays for the advertis
+A:By alleging something that, if true, would weaken the plausibility of the advertiser�s conclusion B:By questioning the truth of the purportedly factual statement on which the advertiser�s conclusion is based C:By offering an interpretation of the advertiser�s opening statement that, if accurate, shows that there is an implicit contradiction in it D:By pointing out that the advertiser�s point of view is biased E:By arguing that the advertiser too narrowly restricts the discussion to the effects of advertising that are economic
+ANS: A
+DETAIL: As for (C), I don't see any implicit contradiction in the advertiser's claim. An implicit contradiction would render the argument invalid without the consumer having to pipe up in the first place. What the consumer does is points out something that, if true (low-priced newspapers end up costing consumers more because of advertising) would weaken the advertiser's argument, which is answer (A).
+As for (B), what is the factual statement that is being questioned? The advertiser is making a claim, an
+
+=== ROW 561 (idx 560) ===
+Q: Child�s World, a chain of toy stores, has relied on a �supermarket concept� of computerized inventory control and customer self-service to eliminate the category of sales clerks from its force of employees. It now plans to employ the same concept in selling children�s clothes.
+
+The plan of Child�s W
+A:supermarkets will not also be selling children�s clothes in the same manner B:personal service by sales personnel is not required for selling children�s clothes successfully C:the same kind of computers will be used in inventory control for both clothes and toys at Child�s World D:a self-service plan cannot be employed without computerized inventory control E:sales clerks are the only employees of Child�s World who could be assigned tasks related to inventory control
+ANS: B
+DETAIL: This is option (B).�
+
+=== ROW 562 (idx 561) ===
+Q: In the United States, the Postal Service has a monopoly on first-class mail, but much of what is sent first class could be transmitted electronically. Electronic transmittal operators argue that if the Postal Service were to offer electronic transmission, it would have an unfair advantage, since its
+A:If the Postal Service were to offer electronic transmission, it could not make a profit on first -class mail. B:If the Postal Service were to offer electronic transmission, it would have a monopoly on that kind of service. C:Much of the material that is now sent by first class mail could be delivered much faster by special package couriers, but is not sent that way because of cost. D:There is no economy of scale in electronic transmission -that is, the cost per transaction does not go down as more pieces of information are transmitted. E:Electronic transmission will never be cost effective for material not sent by first-class mail such as newspapers and bulk mail.
+ANS: A
+DETAIL: [Answer detail could not be parsed — original content was forum discussion only]
+
+=== ROW 563 (idx 562) ===
+Q: In the past, teachers, bank tellers, and secretaries were predominantly men; these occupations slipped in pay and status when they became largely occupied by women. Therefore, if women become the majority in currently male-dominated professions like accounting, law, and medicine, the income and pres
+A:another argument that contains circular reasoning B:an attempt to refute a generalization by means of an exceptional case C:an analogy between the past and the future D:an appeal to popular beliefs and values E:an attack on the character of the opposition
+ANS: C
+DETAIL: Circular reasoning is when your conclusion and your evidence for that conclusion are essentially the same thing -- meaning that you end up exactly where you started.
+Consider this example: "Riding a motorcycle is dangerous because it's unsafe to ride a motorcycle."
+Here, my evidence ("it's unsafe to ride a motorcycle") is basically a restatement of my conclusion ("riding a motorcycle is dangerous").
+So, I really haven't made a very strong argument. I'm trapped in a logical loop that doesn't actu
+
+=== ROW 564 (idx 563) ===
+Q: Mr. Primm: If hospitals were private enterprises, dependent on profits for their survival, there would be no teaching hospitals, because of the intrinsically high cost of running such hospitals.
+
+Ms. Nakai: I disagree. The medical challenges provided by teaching hospitals attract the very best physi
+A:Doctors at teaching hospitals command high salaries. B:Sophisticated, nonroutine medical care commands a high price. C:Existing teaching hospitals derive some revenue from public subsidies. D:The patient mortality rate at teaching hospitals is high. E:The modern trend among physicians is to become highly specialized.
+ANS: B
+DETAIL: Mr. Primm contention is that teaching hospitals will bring little profit. Ms. Nakai counters by stating that teaching hospitals will attract the best physicians. Because only the best physicians can focus on nonroutine cases, the hospitals will be profitable. The assumption is that nonroutine cases must be expensive, otherwise Ms. Nakai's claim fall apart. (B) states exactly this. Nonroutine care is expensive and thus teaching hospitals will be profitable.
+(E) does not address Ms. Nakai's argume
+
+=== ROW 565 (idx 564) ===
+Q: A weapons-smuggling incident recently took place in country Y. We all know that Y is a closed society. So Y's government must have known about the weapons.
+B If a government claims that it knew nothing about a particular weapons-smuggling incident, it must have known everything about it.
+C If a gove
+A:weapons-smuggling incident recently took place in country Y. We all know that Y is a closed society. So Y's government must have known about the weapons. B:If a government claims that it knew nothing about a particular weapons-smuggling incident, it must have known everything about it. C:If a government does not permit weapons to enter a country, it is a closed society. D:If a country is a closed society, its government has a large contingent of armed guards patrolling its borders. E:If a country is a closed society, its government has knowledge about everything that occurs in the country.
+ANS: E
+DETAIL: Manhattan Prep Instructor from 2009-2025
+
+=== ROW 566 (idx 565) ===
+Q: An electric-power company gained greater profits and provided electricity to consumers at lower rates per unit of electricity by building larger-capacity more efficient plants and by stimulating greater use of electricity within its area. To continue these financial trends, the company planned to re
+A:Demand for electricity within the company's area of service would increase in the future. B:Expenses would not rise beyond the level that could be compensated for by efficiency or volume of operation, or both. C:The planned plant would be sufficiently reliable in service to contribute a net financial benefit to the company as a whole. D:Safety measures to be instituted for the new plant would be the same as those for the plant it would replace. E:The tripling of capacity would not result in insuperable technological obstacles to efficiency.
+ANS: D
+DETAIL: You're correct that the information in (D) isn't necessary! The goal is to continue the trend of great profits. As you've noted, the safety measures could be the same or could be different -- we have no idea how that would affect the profits of the new plant.
+I hope that helps!
+
+=== ROW 567 (idx 566) ===
+Q: In the United States, the Postal Service has a monopoly on first-class mail, but much of what is sent first class could be transmitted electronically. Electronic transmittal operators argue that if the Postal Service were to offer electronic transmission, it would have an unfair advantage, since its
+A:Is the Postal Service as efficient as privately owned electric transmission services? B:If private operators were allowed to operate first-class mail services, would they choose to do so? C:Do the electronic transmittal operators believe that the Postal Service makes a profit on first-class mail? D:Is the Postal Service prohibited from offering electronic transmission services? E:Is the Postal Service expected to have a monopoly on electronic transmission?
+ANS: C
+DETAIL: 
+
+=== ROW 568 (idx 567) ===
+Q: Banning cigarette advertisements in the mass media will not reduce the number of young people who smoke. They know that cigarettes exist and they know how to get them. They do not need the advertisements to supply that information.
+
+The above argument would be most weakened if which of the following
+A:Seeing or hearing an advertisement for a product tends to increase people�s desire for that product. B:Banning cigarette advertisements in the mass media will cause an increase in advertisements in places where cigarettes are sold. C:Advertisements in the mass media have been an exceedingly large part of the expenditures of the tobacco companies. D:Those who oppose cigarette use have advertised against it in the mass media ever since cigarettes were found to be harmful. E:Older people tend to be less influenced by mass-media advertisements than younger people tend to be.
+ANS: A
+DETAIL: Now, of the two sentences above, which is the correct one? The second one. Because they do not need to do something, it will not have an effect; the last supports the first. The "because" is the support, and will always be a premise/sub conclusion, whereas the therefore, which is a conclusion indicator, is our conclusion. This is the best way to go about solving this issue. From a logic perspective, a premise is just support. If you have to ask yourself "Why?" after a statement, you know that th
+
+=== ROW 569 (idx 568) ===
+Q: Mr. Lawson: We should adopt a national family policy that includes legislation requiring employers to provide paid parental leave and establishing government-sponsored day care. Such laws would decrease the stress levels of employees who have responsibility for small children. Thus, such laws would 
+A:An employee�s high stress level can be a cause of unhappiness and poor adjustment for his or her family. B:People who have responsibility for small children and who work outside the home have higher stress levels than those who do not. C:The goal of a national family policy is to lower the stress levels of parents. D:Any national family policy that is adopted would include legislation requiring employers to provide paid parental leave and establishing government-sponsored day care. E:Most children who have been cared for in daycare centers are happy and well adjusted.
+ANS: A
+DETAIL: Irrelevant. How these laws impact the kids is irrelevant to this argument. We are trying to reduce the stress level of parents.
+Answer (A)�
+
+=== ROW 570 (idx 569) ===
+Q: Sales taxes tend to be regressive, affecting poor people more severely than wealthy people. When all purchases of consumer goods are taxed at a fixed percentage of the purchase price, poor people pay a larger proportion of their income in sales taxes than wealthy people do.
+
+It can be correctly infe
+A:Poor people constitute a larger proportion of the taxpaying population than wealthy people do. B:Poor people spend a larger proportion of their income on purchases of consumer goods than wealthy people do. C:Wealthy people pay, on average, a larger amount of sales taxes than poor people do. D:The total amount spent by all poor people on purchases of consumer goods exceeds the total amount spent by all wealthy people on consumer goods. E:The average purchase price of consumer goods bought by wealthy people is higher than that of consumer goods bought by poor people.
+ANS: B
+DETAIL: Again, probably true but the argument does not imply this. It tells us nothing about the average purchase price of consumer goods.
+Answer (B)�
+
+=== ROW 571 (idx 570) ===
+Q: Blood banks will shortly start to screen all donors for NANB hepatitis. Although the new screening tests are estimated to disqualify up to 5 percent of all prospective blood donors, they will still miss two-thirds of donors carrying NANB hepatitis. Therefore, about 10 percent of actual donors will s
+A:The incidence of new cases of NANB hepatitis is likely to go up by 10 percent. B:Donations made by patients specifically for their own use are likely to become less frequent. C:The demand for blood from blood banks is likely to fluctuate more strongly. D:The blood supplies available from blood banks are likely to go down. E:The number of prospective first-time donors is likely to go up by 5 percent.
+ANS: D
+DETAIL: At first I picked A thinking, suppose 10 people comprise 2/3rd of the people who carry NABH and donate blood ---> They donate to 10 people at least ---> those people get NABH as well (now NABH must be infectious otherwise why are Blood banks testing to find whether ppl have NABH or not)
+So increase of 10 people --> ~ 10% increase in NABH infected people.
+After knowing I picked the wrong answer, my fallacy is probably this:
+We don't know the total number of NABH infected cases: it may be 20 or it
+
+=== ROW 572 (idx 571) ===
+Q: Millions of identical copies of a plant can be produced using new tissue-culture and cloning techniques.
+
+If plant propagation by such methods in laboratories proves economical, each of the following, if true, represents a benefit of the new techniques to farmers EXCEPT:
+
+A The techniques allow the 
+A:The techniques allow the development of superior strains to take place more rapidly, requiring fewer generations of plants grown to maturity. B:It is less difficult to care for plants that will grow at rates that do not vary widely. C:Plant diseases and pests, once they take hold, spread more rapidly among genetically uniform plants than among those with genetic variations. D:Mechanical harvesting of crops is less difficult if plants are more uniform in size. E:Special genetic traits can more easily be introduced into plant strains with the use of the new techniques.
+ANS: C
+DETAIL: 
+
+=== ROW 573 (idx 572) ===
+Q: In the past, teachers, bank tellers, and secretaries were predominantly men; these occupations slipped in pay and status when they became largely occupied by women. Therefore, if women become the majority in currently male-dominated professions like accounting, law, and medicine, the income and pres
+A:Accountants, lawyers, and physicians attained their current relatively high levels of income and prestige at about the same time that the pay and status of teachers, bank tellers, and secretaries slipped. B:When large numbers of men join a female-dominated occupation, such as airline flight attendant, the status and pay of the occupation tend to increase. C:The demand for teachers and secretaries has increased significantly in recent years, while the demand for bank tellers has remained relatively stable. D:If present trends in the awarding of law degrees to women continue, it will be at least two decades before the majority of lawyers are women. E:The pay and status of female accountants, lawyers, and physicians today are governed by significantly different economic and sociological forces than were the pay and status of female teachers, bank tellers, and secretaries in the past.
+ANS: E
+DETAIL: ill go for E... what reasons have been given by others on top for A are hanging on only assumptions, which do not relate to anything stated in argument.....
+however E gives a reason by making the two sets of job varying from each other so what is true for one need not be true for the other
+Chetan Sharma
+, Rimcollian
+1.
+Absolute modulus
+2.
+Fractions
+3.
+Percentage increase
+4.
+Combinations
+
+=== ROW 574 (idx 573) ===
+Q: Psychological research indicates that college hockey and football players are more quickly moved to hostility and aggression than are college athletes in noncontact sports such as swimming. But the researchers� conclusion�that contact sports encourage and teach participants to be hostile and aggress
+A:The football and hockey players became more hostile and aggressive during the season and remained so during the off-season, whereas there was no increase in aggressiveness among the swimmers. B:The football and hockey players, but not the swimmers, were aware at the start of the experiment that they were being tested for aggressiveness. C:The same psychological research indicated that the football and hockey players had a great respect for cooperation and team play, whereas the swimmers were most concerned with excelling as individual competitors. D:The research studies were designed to include no college athletes who participated in both contact and noncontact sports. E:Throughout the United States, more incidents of fan violence occur at baseball games than occur at hockey or football games.
+ANS: A
+DETAIL: Baseball is irrelevant.
+Answer (A)�
+
+=== ROW 575 (idx 574) ===
+Q: Partly because of bad weather, but also partly because some major pepper growers have switched to high-priced cocoa, world production of pepper has been running well below worldwide sales for three years. Pepper is consequently in relatively short supply. The price of pepper has soared in response: 
+A:those growers could not have foreseen how high the price of pepper would go B:the initial cost involved in switching from pepper to cocoa is substantial C:supplies of pepper would not be as low as they are if those growers had not switched crops D:cocoa crops are as susceptible to being reduced by bad weather as are pepper crops E:as more growers turn to growing cocoa, cocoa supplies will increase and the price of cocoa will fall precipitously
+ANS: C
+DETAIL: Predicts the future. Unless I don't see another decent option, I lean toward eliminating anything that predicts the future. Also is the opposite of what we want in that it amplifies the notion of missing out on pepper prices by also having to endure lower cocoa prices. Eliminate.
+Answer choice C.�
+
+=== ROW 576 (idx 575) ===
+Q: Stronger patent laws are needed to protect inventions from being pirated. With that protection, manufacturers would be encouraged to invest in the development of new products and technologies. Such investment frequently results in an increase in a manufacturer�s productivity.
+
+Which of the following
+A:Stronger patent laws tend to benefit financial institutions as well as manufacturers. B:Increased productivity in manufacturing is likely to be accompanied by the creation of more manufacturing jobs. C:Manufacturers will decrease investment in the development of new products and technologies unless there are stronger patent laws. D:The weakness of current patent laws has been a cause of economic recession. E:Stronger patent laws would stimulate improvements in productivity for many manufacturers.
+ANS: E
+DETAIL: This choice is a logical conclusion that we derived above. No new assumption has to be made for this to be true. Therefore it "Must be True" based on the premises given in the stimulus.
+Hope it helps,
+
+=== ROW 577 (idx 576) ===
+Q: Partly because of bad weather, but also partly because some major pepper growers have switched to high-priced cocoa, world production of pepper has been running well below worldwide sales for three years. Pepper is consequently in relatively short supply. The price of pepper has soared in response: 
+A:Pepper is a profitable crop only if it is grown on a large scale. B:World consumption of pepper has been unusually high for three years. C:World production of pepper will return to previous levels once normal weather returns. D:Surplus stocks of pepper have been reduced in the past three years. E:The profits that the growers of pepper have made in the past three years have been unprecedented.
+ANS: D
+DETAIL: We have no idea about costs of production and therefore can't make any conclusions about profits. Eliminate.
+Answer choice D.�
+
+=== ROW 578 (idx 577) ===
+Q: Which of the following best completes the passage below?
+
+At large amusement parks, live shows are used very deliberately to influence crowd movements. Lunchtime performances relieve the pressure on a park�s restaurants. Evening performances have a rather different purpose: to encourage visitors to 
+A:keeping the lines at the various rides short by drawing off part of the crowd B:enhancing revenue by attracting people who come only for the live shows and then leave the park C:avoiding as far as possible traffic jams caused by visitors entering or leaving the park D:encouraging as many people as possible to come to the park in order to eat at the restaurants E:utilizing the restaurants at optimal levels for as much of the day as possible
+ANS: E
+DETAIL: Answer: Now we're on track. The goal is to keep the RIGHT NUMBER of people at the restaurants at certain times.
+-tommy
+
+=== ROW 579 (idx 578) ===
+Q: Using computer techniques, researchers analyze layers of paint that lie buried beneath the surface layers of old paintings. They claim, for example, that additional mountainous scenery once appeared in Leonardo da Vinci�s Mona Lisa, which was later painted over. Skeptics reply to these claims, howev
+A:There is no written or anecdotal record that Leonardo da Vinci ever painted over major areas of his Mona Lisa. B:Painters of da Vinci�s time commonly created images of mountainous scenery in the backgrounds of portraits like the Mona Lisa. C:No one knows for certain what parts of the Mona Lisa may have been painted by da Vinci�s assistants rather than by da Vinci himself. D:Infrared photography of the Mona Lisa has revealed no trace of hidden mountainous scenery. E:Analysis relying on X-rays only has the capacity to detect lead-based white pigments in layers of paint beneath a painting�s surface layers.
+ANS: E
+DETAIL: If I understand your question correctly, then yes! (E) states that "analysis relying on X-rays
+only
+has the capacity..."
+Here's another example: "My car only has the power to go up to 100 mph." - My car has
+some
+power (a
+limited
+amount of power), but not enough power to go over 100 mph.
+I hope that helps!
+
+=== ROW 580 (idx 579) ===
+Q: Archaeologists seeking the location of a legendary siege and destruction of a city are excavating in several possible places, including a middle and a lower layer of a large mound. The bottom of the middle layer contains some pieces of pottery of type 3, known to be from a later period than the time
+A:Gerbils, small animals long native to the area, dig large burrows into which objects can fall when the burrows collapse. B:Pottery of types 1 and 2, found in the lower level, was used in the cities from which, according to the legend, the besieging forces came. C:Several pieces of stone from a lower-layer wall have been found incorporated into the remains of a building in the middle layer. D:Both the middle and the lower layer show evidence of large-scale destruction of habitations by fire. E:Bronze ax heads of a type used at the time of the siege were found in the lower level of excavation.
+ANS: A
+DETAIL: This fortifies the idea that the siege took place at the time of the lower layer. We need to weaken the evidence but this in fact strengthens it somewhat.
+Answer (A)�
+
+=== ROW 581 (idx 580) ===
+Q: Archaeologists seeking the location of a legendary siege and destruction of a city are excavating in several possible places, including a middle and a lower layer of a large mound. The bottom of the middle layer contains some pieces of pottery of type 3, known to be from a later period than the time
+A:The lower layer contains the remains of the city where the siege took place. B:The legend confuses stories from two different historical periods. C:The middle layer does not represent the period of the siege. D:The siege lasted for a long time before the city was destroyed. E:The pottery of type 3 was imported to the city by traders.
+ANS: C
+DETAIL: This clearly doesn't logically follow the evidence in the passage (all we know is that a certain type of pottery is
+not
+in the bottom layer). Repeat this process with the other answer choices, and see if that helps you arrive at the correct answer.
+I hope this helps!
+
+=== ROW 582 (idx 581) ===
+Q: Ross: The profitability of Company X, restored to private ownership five years ago, is clear evidence that businesses will always fare better under private than under public ownership.
+
+Julia: Wrong. A close look at the records shows that X has been profitable since the appointment of a first-class 
+A:The evidence Ross cites comes from only a single observed case, that of Company X. B:The profitability of Company X might be only temporary. C:Ross�s statement leaves open the possibility that the cause he cites came after the effect he attributes to it. D:No mention is made of companies that are partly government owned and partly privately owned. E:No exact figures are given for the current profits of Company X
+ANS: C
+DETAIL: 
+
+=== ROW 583 (idx 582) ===
+Q: Nearly one in three subscribers to Financial Forecaster is a millionaire, and over half are in top management. Shouldn�t you subscribe to Financial Forecaster now?
+
+A reader who is neither a millionaire nor in top management would be most likely to act in accordance with the advertisement�s suggesti
+A:reader who is neither a millionaire nor in top management would be most likely to act in accordance with the advertisement�s suggestion if he or she drew which of the following questionable conclusions invited by the advertisement? B:Top managers cannot do their jobs properly without reading Financial Forecaster. C:The advertisement is placed where those who will be likely to read it are millionaires. D:The subscribers mentioned were helped to become millionaires or join top management by reading Financial Forecaster. E:Only those who will in fact become millionaires, or at least top managers, will read the advertisement.
+ANS: D
+DETAIL: Again, this says that it caters to the cream of the society - people who are likely to become millionaires or top managers. Again, this is not what we need. We need the conclusion of a person who falls for the ad, not the smart person.
+
+=== ROW 584 (idx 583) ===
+Q: In Millington, a city of 50,000 people, Mercedes Pedrosa, a realtor, calculated that a family with Millington�s median family income, $28,000 a year, could afford to buy Millington�s median-priced $77,000 house. This calculation was based on an 11.2 percent mortgage interest rate and on the realtor�
+A:Millington�s total population was 45,000 people. B:Millington�s median annual family income was $27,000. C:Millington�s median-priced house cost $80,000. D:The rate at which people in Millington had to pay mortgage interest was only 10 percent. E:Families in Millington could only afford to pay up to 22 percent of their annual income for housing.
+ANS: D
+DETAIL: Like (C), this choice identifies a variable that determines what families can afford to pay, but it goes in the wrong direction. Since 22% is a lower ceiling than 25%, making this one change would mean poorer families have a harder time buying median-priced house.
+I hope this shows how to tackle the question and eliminate answer choices without doing any arithmetic.
+
+
